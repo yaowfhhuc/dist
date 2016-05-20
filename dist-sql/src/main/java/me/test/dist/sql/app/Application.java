@@ -13,7 +13,6 @@ import org.springframework.context.annotation.Primary;
 @SpringBootApplication
 public class Application {
 
-	
 	@Bean(name="zgDataSource")
 	@ConfigurationProperties(prefix="datasource.ziguan")
 	public DataSource zgDataSource(){
