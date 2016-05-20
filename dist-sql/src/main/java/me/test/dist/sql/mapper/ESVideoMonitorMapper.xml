@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="me.test.dist.sql.mapper.ESVideoMonitorMapper" >
+  <resultMap id="BaseResultMap" type="me.test.dist.sql.model.ESVideoMonitor" >
+    <id column="VM_ID" property="vmId" jdbcType="DECIMAL" />
+    <result column="VM_HALL_NAME" property="vmHallName" jdbcType="VARCHAR" />
+    <result column="VM_LENS_BRAND" property="vmLensBrand" jdbcType="VARCHAR" />
+    <result column="VM_TYPE" property="vmType" jdbcType="VARCHAR" />
+    <result column="VM_PHYSICAL_ADDRESS" property="vmPhysicalAddress" jdbcType="VARCHAR" />
+    <result column="VM_IP" property="vmIp" jdbcType="VARCHAR" />
+    <result column="VM_USER_NAME" property="vmUserName" jdbcType="VARCHAR" />
+    <result column="VM_PASSWORD" property="vmPassword" jdbcType="VARCHAR" />
+    <result column="VM_CONFIG_ID" property="vmConfigId" jdbcType="DECIMAL" />
+    <result column="VM_CONIG_PWD" property="vmConigPwd" jdbcType="DECIMAL" />
+    <result column="VM_PLATFORM_ADDRESS" property="vmPlatformAddress" jdbcType="VARCHAR" />
+    <result column="VM_PROT_NUM" property="vmProtNum" jdbcType="DECIMAL" />
+    <result column="VM_LOGIN_FIELD" property="vmLoginField" jdbcType="VARCHAR" />
+    <result column="BASIC_ID" property="basicId" jdbcType="DECIMAL" />
+    <result column="VM_VIDEO_LINK" property="vmVideoLink" jdbcType="VARCHAR" />
+    <result column="CM_ID" property="cmId" jdbcType="DECIMAL" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    VM_ID, VM_HALL_NAME, VM_LENS_BRAND, VM_TYPE, VM_PHYSICAL_ADDRESS, VM_IP, VM_USER_NAME, 
+    VM_PASSWORD, VM_CONFIG_ID, VM_CONIG_PWD, VM_PLATFORM_ADDRESS, VM_PROT_NUM, VM_LOGIN_FIELD, 
+    BASIC_ID, VM_VIDEO_LINK, CM_ID
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.math.BigDecimal" >
+    select 
+    <include refid="Base_Column_List" />
+    from NETFLOW.ES_VIDEO_MONITOR
+    where VM_ID = #{vmId,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.math.BigDecimal" >
+    delete from NETFLOW.ES_VIDEO_MONITOR
+    where VM_ID = #{vmId,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" parameterType="me.test.dist.sql.model.ESVideoMonitor" >
+    insert into NETFLOW.ES_VIDEO_MONITOR (VM_ID, VM_HALL_NAME, VM_LENS_BRAND, 
+      VM_TYPE, VM_PHYSICAL_ADDRESS, VM_IP, 
+      VM_USER_NAME, VM_PASSWORD, VM_CONFIG_ID, 
+      VM_CONIG_PWD, VM_PLATFORM_ADDRESS, VM_PROT_NUM, 
+      VM_LOGIN_FIELD, BASIC_ID, VM_VIDEO_LINK, 
+      CM_ID)
+    values (#{vmId,jdbcType=DECIMAL}, #{vmHallName,jdbcType=VARCHAR}, #{vmLensBrand,jdbcType=VARCHAR}, 
+      #{vmType,jdbcType=VARCHAR}, #{vmPhysicalAddress,jdbcType=VARCHAR}, #{vmIp,jdbcType=VARCHAR}, 
+      #{vmUserName,jdbcType=VARCHAR}, #{vmPassword,jdbcType=VARCHAR}, #{vmConfigId,jdbcType=DECIMAL}, 
+      #{vmConigPwd,jdbcType=DECIMAL}, #{vmPlatformAddress,jdbcType=VARCHAR}, #{vmProtNum,jdbcType=DECIMAL}, 
+      #{vmLoginField,jdbcType=VARCHAR}, #{basicId,jdbcType=DECIMAL}, #{vmVideoLink,jdbcType=VARCHAR}, 
+      #{cmId,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="me.test.dist.sql.model.ESVideoMonitor" >
+    insert into NETFLOW.ES_VIDEO_MONITOR
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="vmId != null" >
+        VM_ID,
+      </if>
+      <if test="vmHallName != null" >
+        VM_HALL_NAME,
+      </if>
+      <if test="vmLensBrand != null" >
+        VM_LENS_BRAND,
+      </if>
+      <if test="vmType != null" >
+        VM_TYPE,
+      </if>
+      <if test="vmPhysicalAddress != null" >
+        VM_PHYSICAL_ADDRESS,
+      </if>
+      <if test="vmIp != null" >
+        VM_IP,
+      </if>
+      <if test="vmUserName != null" >
+        VM_USER_NAME,
+      </if>
+      <if test="vmPassword != null" >
+        VM_PASSWORD,
+      </if>
+      <if test="vmConfigId != null" >
+        VM_CONFIG_ID,
+      </if>
+      <if test="vmConigPwd != null" >
+        VM_CONIG_PWD,
+      </if>
+      <if test="vmPlatformAddress != null" >
+        VM_PLATFORM_ADDRESS,
+      </if>
+      <if test="vmProtNum != null" >
+        VM_PROT_NUM,
+      </if>
+      <if test="vmLoginField != null" >
+        VM_LOGIN_FIELD,
+      </if>
+      <if test="basicId != null" >
+        BASIC_ID,
+      </if>
+      <if test="vmVideoLink != null" >
+        VM_VIDEO_LINK,
+      </if>
+      <if test="cmId != null" >
+        CM_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="vmId != null" >
+        #{vmId,jdbcType=DECIMAL},
+      </if>
+      <if test="vmHallName != null" >
+        #{vmHallName,jdbcType=VARCHAR},
+      </if>
+      <if test="vmLensBrand != null" >
+        #{vmLensBrand,jdbcType=VARCHAR},
+      </if>
+      <if test="vmType != null" >
+        #{vmType,jdbcType=VARCHAR},
+      </if>
+      <if test="vmPhysicalAddress != null" >
+        #{vmPhysicalAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="vmIp != null" >
+        #{vmIp,jdbcType=VARCHAR},
+      </if>
+      <if test="vmUserName != null" >
+        #{vmUserName,jdbcType=VARCHAR},
+      </if>
+      <if test="vmPassword != null" >
+        #{vmPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="vmConfigId != null" >
+        #{vmConfigId,jdbcType=DECIMAL},
+      </if>
+      <if test="vmConigPwd != null" >
+        #{vmConigPwd,jdbcType=DECIMAL},
+      </if>
+      <if test="vmPlatformAddress != null" >
+        #{vmPlatformAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="vmProtNum != null" >
+        #{vmProtNum,jdbcType=DECIMAL},
+      </if>
+      <if test="vmLoginField != null" >
+        #{vmLoginField,jdbcType=VARCHAR},
+      </if>
+      <if test="basicId != null" >
+        #{basicId,jdbcType=DECIMAL},
+      </if>
+      <if test="vmVideoLink != null" >
+        #{vmVideoLink,jdbcType=VARCHAR},
+      </if>
+      <if test="cmId != null" >
+        #{cmId,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="me.test.dist.sql.model.ESVideoMonitor" >
+    update NETFLOW.ES_VIDEO_MONITOR
+    <set >
+      <if test="vmHallName != null" >
+        VM_HALL_NAME = #{vmHallName,jdbcType=VARCHAR},
+      </if>
+      <if test="vmLensBrand != null" >
+        VM_LENS_BRAND = #{vmLensBrand,jdbcType=VARCHAR},
+      </if>
+      <if test="vmType != null" >
+        VM_TYPE = #{vmType,jdbcType=VARCHAR},
+      </if>
+      <if test="vmPhysicalAddress != null" >
+        VM_PHYSICAL_ADDRESS = #{vmPhysicalAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="vmIp != null" >
+        VM_IP = #{vmIp,jdbcType=VARCHAR},
+      </if>
+      <if test="vmUserName != null" >
+        VM_USER_NAME = #{vmUserName,jdbcType=VARCHAR},
+      </if>
+      <if test="vmPassword != null" >
+        VM_PASSWORD = #{vmPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="vmConfigId != null" >
+        VM_CONFIG_ID = #{vmConfigId,jdbcType=DECIMAL},
+      </if>
+      <if test="vmConigPwd != null" >
+        VM_CONIG_PWD = #{vmConigPwd,jdbcType=DECIMAL},
+      </if>
+      <if test="vmPlatformAddress != null" >
+        VM_PLATFORM_ADDRESS = #{vmPlatformAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="vmProtNum != null" >
+        VM_PROT_NUM = #{vmProtNum,jdbcType=DECIMAL},
+      </if>
+      <if test="vmLoginField != null" >
+        VM_LOGIN_FIELD = #{vmLoginField,jdbcType=VARCHAR},
+      </if>
+      <if test="basicId != null" >
+        BASIC_ID = #{basicId,jdbcType=DECIMAL},
+      </if>
+      <if test="vmVideoLink != null" >
+        VM_VIDEO_LINK = #{vmVideoLink,jdbcType=VARCHAR},
+      </if>
+      <if test="cmId != null" >
+        CM_ID = #{cmId,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where VM_ID = #{vmId,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="me.test.dist.sql.model.ESVideoMonitor" >
+    update NETFLOW.ES_VIDEO_MONITOR
+    set VM_HALL_NAME = #{vmHallName,jdbcType=VARCHAR},
+      VM_LENS_BRAND = #{vmLensBrand,jdbcType=VARCHAR},
+      VM_TYPE = #{vmType,jdbcType=VARCHAR},
+      VM_PHYSICAL_ADDRESS = #{vmPhysicalAddress,jdbcType=VARCHAR},
+      VM_IP = #{vmIp,jdbcType=VARCHAR},
+      VM_USER_NAME = #{vmUserName,jdbcType=VARCHAR},
+      VM_PASSWORD = #{vmPassword,jdbcType=VARCHAR},
+      VM_CONFIG_ID = #{vmConfigId,jdbcType=DECIMAL},
+      VM_CONIG_PWD = #{vmConigPwd,jdbcType=DECIMAL},
+      VM_PLATFORM_ADDRESS = #{vmPlatformAddress,jdbcType=VARCHAR},
+      VM_PROT_NUM = #{vmProtNum,jdbcType=DECIMAL},
+      VM_LOGIN_FIELD = #{vmLoginField,jdbcType=VARCHAR},
+      BASIC_ID = #{basicId,jdbcType=DECIMAL},
+      VM_VIDEO_LINK = #{vmVideoLink,jdbcType=VARCHAR},
+      CM_ID = #{cmId,jdbcType=DECIMAL}
+    where VM_ID = #{vmId,jdbcType=DECIMAL}
+  </update>
+</mapper>

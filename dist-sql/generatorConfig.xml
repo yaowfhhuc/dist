@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+	<classPathEntry
+		location="D:\work\maven.1463386150832\SourceCodeLib\EasySight_JS\EasySight_Web\WebRoot\WEB-INF\lib\ojdbc14.jar" />
+
+	<context id="context1">
+
+		<commentGenerator>
+			<!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+			<property name="suppressAllComments" value="true" />
+			<property name="forceBigDecimals" value="false" />
+		</commentGenerator>
+
+		<jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"
+			connectionURL="jdbc:oracle:thin:@10.40.93.75:1521/ipnet" userId="netflow"
+			password="Dx_netflow1234" />
+		<javaModelGenerator targetPackage="me.test.dist.sql.model"
+			targetProject="dist-sql\src\main\java" />
+		<sqlMapGenerator targetPackage="me.test.dist.sql.mapper"
+			targetProject="dist-sql\src\main\java" />
+		<javaClientGenerator targetPackage="me.test.dist.sql.mapper"
+			targetProject="dist-sql\src\main\java" type="XMLMAPPER" />
+		<table schema="NETFLOW" tableName="ES_BASIC_MSG"
+			domainObjectName="ESCustomerMsg" enableCountByExample="false" enableUpdateByExample="false"	enableDeleteByExample="false" enableSelectByExample="false"	selectByExampleQueryId="false"/>
+		<table schema="NETFLOW" tableName="ES_CHECK_MSG"
+			domainObjectName="ESCheckMsg" enableCountByExample="false" enableUpdateByExample="false"	enableDeleteByExample="false" enableSelectByExample="false"	selectByExampleQueryId="false"/>
+		<table schema="NETFLOW" tableName="ES_DATA_TRAFFIC"
+			domainObjectName="ESDataTraffic" enableCountByExample="false" enableUpdateByExample="false"	enableDeleteByExample="false" enableSelectByExample="false"	selectByExampleQueryId="false"/>
+		<table schema="NETFLOW" tableName="ES_DISTRIBUTION_ATOM"
+			domainObjectName="ESDistributionAtom" enableCountByExample="false" enableUpdateByExample="false"	enableDeleteByExample="false" enableSelectByExample="false"	selectByExampleQueryId="false"/>
+		<table schema="NETFLOW" tableName="ES_DISTRIBUTION_FRAME"
+			domainObjectName="ESDistributionFrame" enableCountByExample="false" enableUpdateByExample="false"	enableDeleteByExample="false" enableSelectByExample="false"	selectByExampleQueryId="false"/>
+		<table schema="NETFLOW" tableName="ES_GPRS_SPMSG"
+			domainObjectName="ESGprsMsg" enableCountByExample="false" enableUpdateByExample="false"	enableDeleteByExample="false" enableSelectByExample="false"	selectByExampleQueryId="false"/>
+		<table schema="NETFLOW" tableName="ES_MAS_MSG" domainObjectName="ESMasMsg" enableCountByExample="false" enableUpdateByExample="false"	enableDeleteByExample="false" enableSelectByExample="false"	selectByExampleQueryId="false"/>
+		<table schema="NETFLOW" tableName="ES_ODF_MSG" domainObjectName="ESOdfMsg" enableCountByExample="false" enableUpdateByExample="false"	enableDeleteByExample="false" enableSelectByExample="false"	selectByExampleQueryId="false"/>
+		<table schema="NETFLOW" tableName="ES_OTHER_DEVICE"
+			domainObjectName="ESOtherDeviceMsg" enableCountByExample="false" enableUpdateByExample="false"	enableDeleteByExample="false" enableSelectByExample="false"	selectByExampleQueryId="false"/>
+		<table schema="NETFLOW" tableName="ES_PRENODE_MSG"
+			domainObjectName="ESPrenodeMsg" enableCountByExample="false" enableUpdateByExample="false"	enableDeleteByExample="false" enableSelectByExample="false"	selectByExampleQueryId="false"/>
+		<table schema="NETFLOW" tableName="ES_TRANSFER_TRAFFICE"
+			domainObjectName="ESTransferTraffice" enableCountByExample="false" enableUpdateByExample="false"	enableDeleteByExample="false" enableSelectByExample="false"	selectByExampleQueryId="false"/>
+		<table schema="NETFLOW" tableName="ES_TYPEFUNC_PORT"
+			domainObjectName="ESTypeFuncPort" enableCountByExample="false" enableUpdateByExample="false"	enableDeleteByExample="false" enableSelectByExample="false"	selectByExampleQueryId="false"/>
+		<table schema="NETFLOW" tableName="ES_VIDEO_MONITOR"
+			domainObjectName="ESVideoMonitor" enableCountByExample="false" enableUpdateByExample="false"	enableDeleteByExample="false" enableSelectByExample="false"	selectByExampleQueryId="false"/>
+		<table schema="NETFLOW" tableName="ES_VOICE_TRAFFIC"
+			domainObjectName="ESVoiceTraffic" enableCountByExample="false" enableUpdateByExample="false"	enableDeleteByExample="false" enableSelectByExample="false"	selectByExampleQueryId="false"/>
+
+	</context>
+</generatorConfiguration>

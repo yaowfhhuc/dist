@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="me.test.dist.sql.mapper.ESCheckMsgMapper" >
+  <resultMap id="BaseResultMap" type="me.test.dist.sql.model.ESCheckMsg" >
+    <id column="CM_ID" property="cmId" jdbcType="DECIMAL" />
+    <result column="BASIC_ID" property="basicId" jdbcType="DECIMAL" />
+    <result column="CM_STATUS" property="cmStatus" jdbcType="DECIMAL" />
+    <result column="CM_PERSON" property="cmPerson" jdbcType="VARCHAR" />
+    <result column="CM_SUBMIT_TIME" property="cmSubmitTime" jdbcType="TIMESTAMP" />
+    <result column="CM_PASS_TIME" property="cmPassTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    CM_ID, BASIC_ID, CM_STATUS, CM_PERSON, CM_SUBMIT_TIME, CM_PASS_TIME
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.math.BigDecimal" >
+    select 
+    <include refid="Base_Column_List" />
+    from NETFLOW.ES_CHECK_MSG
+    where CM_ID = #{cmId,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.math.BigDecimal" >
+    delete from NETFLOW.ES_CHECK_MSG
+    where CM_ID = #{cmId,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" parameterType="me.test.dist.sql.model.ESCheckMsg" >
+    insert into NETFLOW.ES_CHECK_MSG (CM_ID, BASIC_ID, CM_STATUS, 
+      CM_PERSON, CM_SUBMIT_TIME, CM_PASS_TIME
+      )
+    values (#{cmId,jdbcType=DECIMAL}, #{basicId,jdbcType=DECIMAL}, #{cmStatus,jdbcType=DECIMAL}, 
+      #{cmPerson,jdbcType=VARCHAR}, #{cmSubmitTime,jdbcType=TIMESTAMP}, #{cmPassTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="me.test.dist.sql.model.ESCheckMsg" >
+    insert into NETFLOW.ES_CHECK_MSG
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="cmId != null" >
+        CM_ID,
+      </if>
+      <if test="basicId != null" >
+        BASIC_ID,
+      </if>
+      <if test="cmStatus != null" >
+        CM_STATUS,
+      </if>
+      <if test="cmPerson != null" >
+        CM_PERSON,
+      </if>
+      <if test="cmSubmitTime != null" >
+        CM_SUBMIT_TIME,
+      </if>
+      <if test="cmPassTime != null" >
+        CM_PASS_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="cmId != null" >
+        #{cmId,jdbcType=DECIMAL},
+      </if>
+      <if test="basicId != null" >
+        #{basicId,jdbcType=DECIMAL},
+      </if>
+      <if test="cmStatus != null" >
+        #{cmStatus,jdbcType=DECIMAL},
+      </if>
+      <if test="cmPerson != null" >
+        #{cmPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="cmSubmitTime != null" >
+        #{cmSubmitTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cmPassTime != null" >
+        #{cmPassTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="me.test.dist.sql.model.ESCheckMsg" >
+    update NETFLOW.ES_CHECK_MSG
+    <set >
+      <if test="basicId != null" >
+        BASIC_ID = #{basicId,jdbcType=DECIMAL},
+      </if>
+      <if test="cmStatus != null" >
+        CM_STATUS = #{cmStatus,jdbcType=DECIMAL},
+      </if>
+      <if test="cmPerson != null" >
+        CM_PERSON = #{cmPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="cmSubmitTime != null" >
+        CM_SUBMIT_TIME = #{cmSubmitTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cmPassTime != null" >
+        CM_PASS_TIME = #{cmPassTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where CM_ID = #{cmId,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="me.test.dist.sql.model.ESCheckMsg" >
+    update NETFLOW.ES_CHECK_MSG
+    set BASIC_ID = #{basicId,jdbcType=DECIMAL},
+      CM_STATUS = #{cmStatus,jdbcType=DECIMAL},
+      CM_PERSON = #{cmPerson,jdbcType=VARCHAR},
+      CM_SUBMIT_TIME = #{cmSubmitTime,jdbcType=TIMESTAMP},
+      CM_PASS_TIME = #{cmPassTime,jdbcType=TIMESTAMP}
+    where CM_ID = #{cmId,jdbcType=DECIMAL}
+  </update>
+</mapper>

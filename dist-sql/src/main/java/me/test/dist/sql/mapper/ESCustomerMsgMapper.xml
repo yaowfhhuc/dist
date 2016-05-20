@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="me.test.dist.sql.mapper.ESCustomerMsgMapper" >
+  <resultMap id="BaseResultMap" type="me.test.dist.sql.model.ESCustomerMsg" >
+    <id column="BASIC_ID" property="basicId" jdbcType="DECIMAL" />
+    <result column="BM_CUST_NAME" property="bmCustName" jdbcType="VARCHAR" />
+    <result column="BM_INSERT_ADDRESS" property="bmInsertAddress" jdbcType="VARCHAR" />
+    <result column="BM_LINKMAN" property="bmLinkman" jdbcType="VARCHAR" />
+    <result column="BM_BUSINESS_TYPE" property="bmBusinessType" jdbcType="VARCHAR" />
+    <result column="BM_IMG" property="bmImg" jdbcType="VARCHAR" />
+    <result column="BM_BUSNISS_LEVEL" property="bmBusnissLevel" jdbcType="DECIMAL" />
+    <result column="BM_ROUTE_MSG" property="bmRouteMsg" jdbcType="DECIMAL" />
+    <result column="BM_MAINT" property="bmMaint" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    BASIC_ID, BM_CUST_NAME, BM_INSERT_ADDRESS, BM_LINKMAN, BM_BUSINESS_TYPE, BM_IMG, 
+    BM_BUSNISS_LEVEL, BM_ROUTE_MSG, BM_MAINT
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.math.BigDecimal" >
+    select 
+    <include refid="Base_Column_List" />
+    from NETFLOW.ES_BASIC_MSG
+    where BASIC_ID = #{basicId,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.math.BigDecimal" >
+    delete from NETFLOW.ES_BASIC_MSG
+    where BASIC_ID = #{basicId,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" parameterType="me.test.dist.sql.model.ESCustomerMsg" >
+    insert into NETFLOW.ES_BASIC_MSG (BASIC_ID, BM_CUST_NAME, BM_INSERT_ADDRESS, 
+      BM_LINKMAN, BM_BUSINESS_TYPE, BM_IMG, 
+      BM_BUSNISS_LEVEL, BM_ROUTE_MSG, BM_MAINT
+      )
+    values (#{basicId,jdbcType=DECIMAL}, #{bmCustName,jdbcType=VARCHAR}, #{bmInsertAddress,jdbcType=VARCHAR}, 
+      #{bmLinkman,jdbcType=VARCHAR}, #{bmBusinessType,jdbcType=VARCHAR}, #{bmImg,jdbcType=VARCHAR}, 
+      #{bmBusnissLevel,jdbcType=DECIMAL}, #{bmRouteMsg,jdbcType=DECIMAL}, #{bmMaint,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="me.test.dist.sql.model.ESCustomerMsg" >
+    insert into NETFLOW.ES_BASIC_MSG
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="basicId != null" >
+        BASIC_ID,
+      </if>
+      <if test="bmCustName != null" >
+        BM_CUST_NAME,
+      </if>
+      <if test="bmInsertAddress != null" >
+        BM_INSERT_ADDRESS,
+      </if>
+      <if test="bmLinkman != null" >
+        BM_LINKMAN,
+      </if>
+      <if test="bmBusinessType != null" >
+        BM_BUSINESS_TYPE,
+      </if>
+      <if test="bmImg != null" >
+        BM_IMG,
+      </if>
+      <if test="bmBusnissLevel != null" >
+        BM_BUSNISS_LEVEL,
+      </if>
+      <if test="bmRouteMsg != null" >
+        BM_ROUTE_MSG,
+      </if>
+      <if test="bmMaint != null" >
+        BM_MAINT,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="basicId != null" >
+        #{basicId,jdbcType=DECIMAL},
+      </if>
+      <if test="bmCustName != null" >
+        #{bmCustName,jdbcType=VARCHAR},
+      </if>
+      <if test="bmInsertAddress != null" >
+        #{bmInsertAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="bmLinkman != null" >
+        #{bmLinkman,jdbcType=VARCHAR},
+      </if>
+      <if test="bmBusinessType != null" >
+        #{bmBusinessType,jdbcType=VARCHAR},
+      </if>
+      <if test="bmImg != null" >
+        #{bmImg,jdbcType=VARCHAR},
+      </if>
+      <if test="bmBusnissLevel != null" >
+        #{bmBusnissLevel,jdbcType=DECIMAL},
+      </if>
+      <if test="bmRouteMsg != null" >
+        #{bmRouteMsg,jdbcType=DECIMAL},
+      </if>
+      <if test="bmMaint != null" >
+        #{bmMaint,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="me.test.dist.sql.model.ESCustomerMsg" >
+    update NETFLOW.ES_BASIC_MSG
+    <set >
+      <if test="bmCustName != null" >
+        BM_CUST_NAME = #{bmCustName,jdbcType=VARCHAR},
+      </if>
+      <if test="bmInsertAddress != null" >
+        BM_INSERT_ADDRESS = #{bmInsertAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="bmLinkman != null" >
+        BM_LINKMAN = #{bmLinkman,jdbcType=VARCHAR},
+      </if>
+      <if test="bmBusinessType != null" >
+        BM_BUSINESS_TYPE = #{bmBusinessType,jdbcType=VARCHAR},
+      </if>
+      <if test="bmImg != null" >
+        BM_IMG = #{bmImg,jdbcType=VARCHAR},
+      </if>
+      <if test="bmBusnissLevel != null" >
+        BM_BUSNISS_LEVEL = #{bmBusnissLevel,jdbcType=DECIMAL},
+      </if>
+      <if test="bmRouteMsg != null" >
+        BM_ROUTE_MSG = #{bmRouteMsg,jdbcType=DECIMAL},
+      </if>
+      <if test="bmMaint != null" >
+        BM_MAINT = #{bmMaint,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where BASIC_ID = #{basicId,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="me.test.dist.sql.model.ESCustomerMsg" >
+    update NETFLOW.ES_BASIC_MSG
+    set BM_CUST_NAME = #{bmCustName,jdbcType=VARCHAR},
+      BM_INSERT_ADDRESS = #{bmInsertAddress,jdbcType=VARCHAR},
+      BM_LINKMAN = #{bmLinkman,jdbcType=VARCHAR},
+      BM_BUSINESS_TYPE = #{bmBusinessType,jdbcType=VARCHAR},
+      BM_IMG = #{bmImg,jdbcType=VARCHAR},
+      BM_BUSNISS_LEVEL = #{bmBusnissLevel,jdbcType=DECIMAL},
+      BM_ROUTE_MSG = #{bmRouteMsg,jdbcType=DECIMAL},
+      BM_MAINT = #{bmMaint,jdbcType=VARCHAR}
+    where BASIC_ID = #{basicId,jdbcType=DECIMAL}
+  </update>
+</mapper>

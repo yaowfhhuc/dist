@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="me.test.dist.sql.mapper.ESMasMsgMapper" >
+  <resultMap id="BaseResultMap" type="me.test.dist.sql.model.ESMasMsg" >
+    <id column="MM_ID" property="mmId" jdbcType="DECIMAL" />
+    <result column="MM_ENTERPRISE_CODE" property="mmEnterpriseCode" jdbcType="DECIMAL" />
+    <result column="MM_SERVICE_CODE" property="mmServiceCode" jdbcType="DECIMAL" />
+    <result column="MM_MANUFACTURER" property="mmManufacturer" jdbcType="VARCHAR" />
+    <result column="MM_VERSIONS" property="mmVersions" jdbcType="VARCHAR" />
+    <result column="MM_INSTALL_TYPE" property="mmInstallType" jdbcType="VARCHAR" />
+    <result column="MM_INSTALL_ADDRESS" property="mmInstallAddress" jdbcType="VARCHAR" />
+    <result column="MM_IP" property="mmIp" jdbcType="VARCHAR" />
+    <result column="MM_TWICE_DEVELOP" property="mmTwiceDevelop" jdbcType="VARCHAR" />
+    <result column="MM_MAINTAIN_PERSON" property="mmMaintainPerson" jdbcType="VARCHAR" />
+    <result column="MM_MAINTAIN_PHONE" property="mmMaintainPhone" jdbcType="DECIMAL" />
+    <result column="BASIC_ID" property="basicId" jdbcType="DECIMAL" />
+    <result column="CM_ID" property="cmId" jdbcType="DECIMAL" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    MM_ID, MM_ENTERPRISE_CODE, MM_SERVICE_CODE, MM_MANUFACTURER, MM_VERSIONS, MM_INSTALL_TYPE, 
+    MM_INSTALL_ADDRESS, MM_IP, MM_TWICE_DEVELOP, MM_MAINTAIN_PERSON, MM_MAINTAIN_PHONE, 
+    BASIC_ID, CM_ID
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.math.BigDecimal" >
+    select 
+    <include refid="Base_Column_List" />
+    from NETFLOW.ES_MAS_MSG
+    where MM_ID = #{mmId,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.math.BigDecimal" >
+    delete from NETFLOW.ES_MAS_MSG
+    where MM_ID = #{mmId,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" parameterType="me.test.dist.sql.model.ESMasMsg" >
+    insert into NETFLOW.ES_MAS_MSG (MM_ID, MM_ENTERPRISE_CODE, MM_SERVICE_CODE, 
+      MM_MANUFACTURER, MM_VERSIONS, MM_INSTALL_TYPE, 
+      MM_INSTALL_ADDRESS, MM_IP, MM_TWICE_DEVELOP, 
+      MM_MAINTAIN_PERSON, MM_MAINTAIN_PHONE, BASIC_ID, 
+      CM_ID)
+    values (#{mmId,jdbcType=DECIMAL}, #{mmEnterpriseCode,jdbcType=DECIMAL}, #{mmServiceCode,jdbcType=DECIMAL}, 
+      #{mmManufacturer,jdbcType=VARCHAR}, #{mmVersions,jdbcType=VARCHAR}, #{mmInstallType,jdbcType=VARCHAR}, 
+      #{mmInstallAddress,jdbcType=VARCHAR}, #{mmIp,jdbcType=VARCHAR}, #{mmTwiceDevelop,jdbcType=VARCHAR}, 
+      #{mmMaintainPerson,jdbcType=VARCHAR}, #{mmMaintainPhone,jdbcType=DECIMAL}, #{basicId,jdbcType=DECIMAL}, 
+      #{cmId,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="me.test.dist.sql.model.ESMasMsg" >
+    insert into NETFLOW.ES_MAS_MSG
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="mmId != null" >
+        MM_ID,
+      </if>
+      <if test="mmEnterpriseCode != null" >
+        MM_ENTERPRISE_CODE,
+      </if>
+      <if test="mmServiceCode != null" >
+        MM_SERVICE_CODE,
+      </if>
+      <if test="mmManufacturer != null" >
+        MM_MANUFACTURER,
+      </if>
+      <if test="mmVersions != null" >
+        MM_VERSIONS,
+      </if>
+      <if test="mmInstallType != null" >
+        MM_INSTALL_TYPE,
+      </if>
+      <if test="mmInstallAddress != null" >
+        MM_INSTALL_ADDRESS,
+      </if>
+      <if test="mmIp != null" >
+        MM_IP,
+      </if>
+      <if test="mmTwiceDevelop != null" >
+        MM_TWICE_DEVELOP,
+      </if>
+      <if test="mmMaintainPerson != null" >
+        MM_MAINTAIN_PERSON,
+      </if>
+      <if test="mmMaintainPhone != null" >
+        MM_MAINTAIN_PHONE,
+      </if>
+      <if test="basicId != null" >
+        BASIC_ID,
+      </if>
+      <if test="cmId != null" >
+        CM_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="mmId != null" >
+        #{mmId,jdbcType=DECIMAL},
+      </if>
+      <if test="mmEnterpriseCode != null" >
+        #{mmEnterpriseCode,jdbcType=DECIMAL},
+      </if>
+      <if test="mmServiceCode != null" >
+        #{mmServiceCode,jdbcType=DECIMAL},
+      </if>
+      <if test="mmManufacturer != null" >
+        #{mmManufacturer,jdbcType=VARCHAR},
+      </if>
+      <if test="mmVersions != null" >
+        #{mmVersions,jdbcType=VARCHAR},
+      </if>
+      <if test="mmInstallType != null" >
+        #{mmInstallType,jdbcType=VARCHAR},
+      </if>
+      <if test="mmInstallAddress != null" >
+        #{mmInstallAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="mmIp != null" >
+        #{mmIp,jdbcType=VARCHAR},
+      </if>
+      <if test="mmTwiceDevelop != null" >
+        #{mmTwiceDevelop,jdbcType=VARCHAR},
+      </if>
+      <if test="mmMaintainPerson != null" >
+        #{mmMaintainPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="mmMaintainPhone != null" >
+        #{mmMaintainPhone,jdbcType=DECIMAL},
+      </if>
+      <if test="basicId != null" >
+        #{basicId,jdbcType=DECIMAL},
+      </if>
+      <if test="cmId != null" >
+        #{cmId,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="me.test.dist.sql.model.ESMasMsg" >
+    update NETFLOW.ES_MAS_MSG
+    <set >
+      <if test="mmEnterpriseCode != null" >
+        MM_ENTERPRISE_CODE = #{mmEnterpriseCode,jdbcType=DECIMAL},
+      </if>
+      <if test="mmServiceCode != null" >
+        MM_SERVICE_CODE = #{mmServiceCode,jdbcType=DECIMAL},
+      </if>
+      <if test="mmManufacturer != null" >
+        MM_MANUFACTURER = #{mmManufacturer,jdbcType=VARCHAR},
+      </if>
+      <if test="mmVersions != null" >
+        MM_VERSIONS = #{mmVersions,jdbcType=VARCHAR},
+      </if>
+      <if test="mmInstallType != null" >
+        MM_INSTALL_TYPE = #{mmInstallType,jdbcType=VARCHAR},
+      </if>
+      <if test="mmInstallAddress != null" >
+        MM_INSTALL_ADDRESS = #{mmInstallAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="mmIp != null" >
+        MM_IP = #{mmIp,jdbcType=VARCHAR},
+      </if>
+      <if test="mmTwiceDevelop != null" >
+        MM_TWICE_DEVELOP = #{mmTwiceDevelop,jdbcType=VARCHAR},
+      </if>
+      <if test="mmMaintainPerson != null" >
+        MM_MAINTAIN_PERSON = #{mmMaintainPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="mmMaintainPhone != null" >
+        MM_MAINTAIN_PHONE = #{mmMaintainPhone,jdbcType=DECIMAL},
+      </if>
+      <if test="basicId != null" >
+        BASIC_ID = #{basicId,jdbcType=DECIMAL},
+      </if>
+      <if test="cmId != null" >
+        CM_ID = #{cmId,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where MM_ID = #{mmId,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="me.test.dist.sql.model.ESMasMsg" >
+    update NETFLOW.ES_MAS_MSG
+    set MM_ENTERPRISE_CODE = #{mmEnterpriseCode,jdbcType=DECIMAL},
+      MM_SERVICE_CODE = #{mmServiceCode,jdbcType=DECIMAL},
+      MM_MANUFACTURER = #{mmManufacturer,jdbcType=VARCHAR},
+      MM_VERSIONS = #{mmVersions,jdbcType=VARCHAR},
+      MM_INSTALL_TYPE = #{mmInstallType,jdbcType=VARCHAR},
+      MM_INSTALL_ADDRESS = #{mmInstallAddress,jdbcType=VARCHAR},
+      MM_IP = #{mmIp,jdbcType=VARCHAR},
+      MM_TWICE_DEVELOP = #{mmTwiceDevelop,jdbcType=VARCHAR},
+      MM_MAINTAIN_PERSON = #{mmMaintainPerson,jdbcType=VARCHAR},
+      MM_MAINTAIN_PHONE = #{mmMaintainPhone,jdbcType=DECIMAL},
+      BASIC_ID = #{basicId,jdbcType=DECIMAL},
+      CM_ID = #{cmId,jdbcType=DECIMAL}
+    where MM_ID = #{mmId,jdbcType=DECIMAL}
+  </update>
+</mapper>

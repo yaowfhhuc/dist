@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="me.test.dist.sql.mapper.ESOtherDeviceMsgMapper" >
+  <resultMap id="BaseResultMap" type="me.test.dist.sql.model.ESOtherDeviceMsg" >
+    <id column="OD_ID" property="odId" jdbcType="DECIMAL" />
+    <result column="OD_EQUIPMENT_TYPE" property="odEquipmentType" jdbcType="VARCHAR" />
+    <result column="OD_UPS_MODEL" property="odUpsModel" jdbcType="VARCHAR" />
+    <result column="OD_UPS_CAPACITY" property="odUpsCapacity" jdbcType="VARCHAR" />
+    <result column="OD_CONVERSION_TYPE" property="odConversionType" jdbcType="VARCHAR" />
+    <result column="OD_COROTATING_STATUS" property="odCorotatingStatus" jdbcType="VARCHAR" />
+    <result column="BASIC_ID" property="basicId" jdbcType="DECIMAL" />
+    <result column="OD_UPS_STATUS" property="odUpsStatus" jdbcType="VARCHAR" />
+    <result column="OD_COROTATING_MODEL" property="odCorotatingModel" jdbcType="VARCHAR" />
+    <result column="CM_ID" property="cmId" jdbcType="DECIMAL" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    OD_ID, OD_EQUIPMENT_TYPE, OD_UPS_MODEL, OD_UPS_CAPACITY, OD_CONVERSION_TYPE, OD_COROTATING_STATUS, 
+    BASIC_ID, OD_UPS_STATUS, OD_COROTATING_MODEL, CM_ID
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.math.BigDecimal" >
+    select 
+    <include refid="Base_Column_List" />
+    from NETFLOW.ES_OTHER_DEVICE
+    where OD_ID = #{odId,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.math.BigDecimal" >
+    delete from NETFLOW.ES_OTHER_DEVICE
+    where OD_ID = #{odId,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" parameterType="me.test.dist.sql.model.ESOtherDeviceMsg" >
+    insert into NETFLOW.ES_OTHER_DEVICE (OD_ID, OD_EQUIPMENT_TYPE, OD_UPS_MODEL, 
+      OD_UPS_CAPACITY, OD_CONVERSION_TYPE, OD_COROTATING_STATUS, 
+      BASIC_ID, OD_UPS_STATUS, OD_COROTATING_MODEL, 
+      CM_ID)
+    values (#{odId,jdbcType=DECIMAL}, #{odEquipmentType,jdbcType=VARCHAR}, #{odUpsModel,jdbcType=VARCHAR}, 
+      #{odUpsCapacity,jdbcType=VARCHAR}, #{odConversionType,jdbcType=VARCHAR}, #{odCorotatingStatus,jdbcType=VARCHAR}, 
+      #{basicId,jdbcType=DECIMAL}, #{odUpsStatus,jdbcType=VARCHAR}, #{odCorotatingModel,jdbcType=VARCHAR}, 
+      #{cmId,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="me.test.dist.sql.model.ESOtherDeviceMsg" >
+    insert into NETFLOW.ES_OTHER_DEVICE
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="odId != null" >
+        OD_ID,
+      </if>
+      <if test="odEquipmentType != null" >
+        OD_EQUIPMENT_TYPE,
+      </if>
+      <if test="odUpsModel != null" >
+        OD_UPS_MODEL,
+      </if>
+      <if test="odUpsCapacity != null" >
+        OD_UPS_CAPACITY,
+      </if>
+      <if test="odConversionType != null" >
+        OD_CONVERSION_TYPE,
+      </if>
+      <if test="odCorotatingStatus != null" >
+        OD_COROTATING_STATUS,
+      </if>
+      <if test="basicId != null" >
+        BASIC_ID,
+      </if>
+      <if test="odUpsStatus != null" >
+        OD_UPS_STATUS,
+      </if>
+      <if test="odCorotatingModel != null" >
+        OD_COROTATING_MODEL,
+      </if>
+      <if test="cmId != null" >
+        CM_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="odId != null" >
+        #{odId,jdbcType=DECIMAL},
+      </if>
+      <if test="odEquipmentType != null" >
+        #{odEquipmentType,jdbcType=VARCHAR},
+      </if>
+      <if test="odUpsModel != null" >
+        #{odUpsModel,jdbcType=VARCHAR},
+      </if>
+      <if test="odUpsCapacity != null" >
+        #{odUpsCapacity,jdbcType=VARCHAR},
+      </if>
+      <if test="odConversionType != null" >
+        #{odConversionType,jdbcType=VARCHAR},
+      </if>
+      <if test="odCorotatingStatus != null" >
+        #{odCorotatingStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="basicId != null" >
+        #{basicId,jdbcType=DECIMAL},
+      </if>
+      <if test="odUpsStatus != null" >
+        #{odUpsStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="odCorotatingModel != null" >
+        #{odCorotatingModel,jdbcType=VARCHAR},
+      </if>
+      <if test="cmId != null" >
+        #{cmId,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="me.test.dist.sql.model.ESOtherDeviceMsg" >
+    update NETFLOW.ES_OTHER_DEVICE
+    <set >
+      <if test="odEquipmentType != null" >
+        OD_EQUIPMENT_TYPE = #{odEquipmentType,jdbcType=VARCHAR},
+      </if>
+      <if test="odUpsModel != null" >
+        OD_UPS_MODEL = #{odUpsModel,jdbcType=VARCHAR},
+      </if>
+      <if test="odUpsCapacity != null" >
+        OD_UPS_CAPACITY = #{odUpsCapacity,jdbcType=VARCHAR},
+      </if>
+      <if test="odConversionType != null" >
+        OD_CONVERSION_TYPE = #{odConversionType,jdbcType=VARCHAR},
+      </if>
+      <if test="odCorotatingStatus != null" >
+        OD_COROTATING_STATUS = #{odCorotatingStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="basicId != null" >
+        BASIC_ID = #{basicId,jdbcType=DECIMAL},
+      </if>
+      <if test="odUpsStatus != null" >
+        OD_UPS_STATUS = #{odUpsStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="odCorotatingModel != null" >
+        OD_COROTATING_MODEL = #{odCorotatingModel,jdbcType=VARCHAR},
+      </if>
+      <if test="cmId != null" >
+        CM_ID = #{cmId,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where OD_ID = #{odId,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="me.test.dist.sql.model.ESOtherDeviceMsg" >
+    update NETFLOW.ES_OTHER_DEVICE
+    set OD_EQUIPMENT_TYPE = #{odEquipmentType,jdbcType=VARCHAR},
+      OD_UPS_MODEL = #{odUpsModel,jdbcType=VARCHAR},
+      OD_UPS_CAPACITY = #{odUpsCapacity,jdbcType=VARCHAR},
+      OD_CONVERSION_TYPE = #{odConversionType,jdbcType=VARCHAR},
+      OD_COROTATING_STATUS = #{odCorotatingStatus,jdbcType=VARCHAR},
+      BASIC_ID = #{basicId,jdbcType=DECIMAL},
+      OD_UPS_STATUS = #{odUpsStatus,jdbcType=VARCHAR},
+      OD_COROTATING_MODEL = #{odCorotatingModel,jdbcType=VARCHAR},
+      CM_ID = #{cmId,jdbcType=DECIMAL}
+    where OD_ID = #{odId,jdbcType=DECIMAL}
+  </update>
+</mapper>

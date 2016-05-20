@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="me.test.dist.sql.mapper.ESOdfMsgMapper" >
+  <resultMap id="BaseResultMap" type="me.test.dist.sql.model.ESOdfMsg" >
+    <id column="ODF_ID" property="odfId" jdbcType="DECIMAL" />
+    <id column="OPTICAL_CABLE_DIRECTION" property="opticalCableDirection" jdbcType="VARCHAR" />
+    <result column="FIBER_CORE_SUM" property="fiberCoreSum" jdbcType="DECIMAL" />
+    <result column="REEL_NUMBER" property="reelNumber" jdbcType="DECIMAL" />
+    <result column="FRAME_NUM" property="frameNum" jdbcType="VARCHAR" />
+    <result column="BASIC_ID" property="basicId" jdbcType="DECIMAL" />
+    <result column="CM_ID" property="cmId" jdbcType="DECIMAL" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ODF_ID, OPTICAL_CABLE_DIRECTION, FIBER_CORE_SUM, REEL_NUMBER, FRAME_NUM, BASIC_ID, 
+    CM_ID
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="me.test.dist.sql.model.ESOdfMsgKey" >
+    select 
+    <include refid="Base_Column_List" />
+    from NETFLOW.ES_ODF_MSG
+    where ODF_ID = #{odfId,jdbcType=DECIMAL}
+      and OPTICAL_CABLE_DIRECTION = #{opticalCableDirection,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="me.test.dist.sql.model.ESOdfMsgKey" >
+    delete from NETFLOW.ES_ODF_MSG
+    where ODF_ID = #{odfId,jdbcType=DECIMAL}
+      and OPTICAL_CABLE_DIRECTION = #{opticalCableDirection,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="me.test.dist.sql.model.ESOdfMsg" >
+    insert into NETFLOW.ES_ODF_MSG (ODF_ID, OPTICAL_CABLE_DIRECTION, FIBER_CORE_SUM, 
+      REEL_NUMBER, FRAME_NUM, BASIC_ID, 
+      CM_ID)
+    values (#{odfId,jdbcType=DECIMAL}, #{opticalCableDirection,jdbcType=VARCHAR}, #{fiberCoreSum,jdbcType=DECIMAL}, 
+      #{reelNumber,jdbcType=DECIMAL}, #{frameNum,jdbcType=VARCHAR}, #{basicId,jdbcType=DECIMAL}, 
+      #{cmId,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="me.test.dist.sql.model.ESOdfMsg" >
+    insert into NETFLOW.ES_ODF_MSG
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="odfId != null" >
+        ODF_ID,
+      </if>
+      <if test="opticalCableDirection != null" >
+        OPTICAL_CABLE_DIRECTION,
+      </if>
+      <if test="fiberCoreSum != null" >
+        FIBER_CORE_SUM,
+      </if>
+      <if test="reelNumber != null" >
+        REEL_NUMBER,
+      </if>
+      <if test="frameNum != null" >
+        FRAME_NUM,
+      </if>
+      <if test="basicId != null" >
+        BASIC_ID,
+      </if>
+      <if test="cmId != null" >
+        CM_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="odfId != null" >
+        #{odfId,jdbcType=DECIMAL},
+      </if>
+      <if test="opticalCableDirection != null" >
+        #{opticalCableDirection,jdbcType=VARCHAR},
+      </if>
+      <if test="fiberCoreSum != null" >
+        #{fiberCoreSum,jdbcType=DECIMAL},
+      </if>
+      <if test="reelNumber != null" >
+        #{reelNumber,jdbcType=DECIMAL},
+      </if>
+      <if test="frameNum != null" >
+        #{frameNum,jdbcType=VARCHAR},
+      </if>
+      <if test="basicId != null" >
+        #{basicId,jdbcType=DECIMAL},
+      </if>
+      <if test="cmId != null" >
+        #{cmId,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="me.test.dist.sql.model.ESOdfMsg" >
+    update NETFLOW.ES_ODF_MSG
+    <set >
+      <if test="fiberCoreSum != null" >
+        FIBER_CORE_SUM = #{fiberCoreSum,jdbcType=DECIMAL},
+      </if>
+      <if test="reelNumber != null" >
+        REEL_NUMBER = #{reelNumber,jdbcType=DECIMAL},
+      </if>
+      <if test="frameNum != null" >
+        FRAME_NUM = #{frameNum,jdbcType=VARCHAR},
+      </if>
+      <if test="basicId != null" >
+        BASIC_ID = #{basicId,jdbcType=DECIMAL},
+      </if>
+      <if test="cmId != null" >
+        CM_ID = #{cmId,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where ODF_ID = #{odfId,jdbcType=DECIMAL}
+      and OPTICAL_CABLE_DIRECTION = #{opticalCableDirection,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="me.test.dist.sql.model.ESOdfMsg" >
+    update NETFLOW.ES_ODF_MSG
+    set FIBER_CORE_SUM = #{fiberCoreSum,jdbcType=DECIMAL},
+      REEL_NUMBER = #{reelNumber,jdbcType=DECIMAL},
+      FRAME_NUM = #{frameNum,jdbcType=VARCHAR},
+      BASIC_ID = #{basicId,jdbcType=DECIMAL},
+      CM_ID = #{cmId,jdbcType=DECIMAL}
+    where ODF_ID = #{odfId,jdbcType=DECIMAL}
+      and OPTICAL_CABLE_DIRECTION = #{opticalCableDirection,jdbcType=VARCHAR}
+  </update>
+</mapper>

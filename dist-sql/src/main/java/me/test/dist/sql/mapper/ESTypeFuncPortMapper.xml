@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="me.test.dist.sql.mapper.ESTypeFuncPortMapper" >
+  <resultMap id="BaseResultMap" type="me.test.dist.sql.model.ESTypeFuncPort" >
+    <result column="TFP_ID" property="tfpId" jdbcType="DECIMAL" />
+    <result column="TFP_NAME" property="tfpName" jdbcType="VARCHAR" />
+    <result column="TFP_FUNC" property="tfpFunc" jdbcType="VARCHAR" />
+    <result column="TFP_TYPE" property="tfpType" jdbcType="VARCHAR" />
+    <result column="TFP_PARENT_TYPE" property="tfpParentType" jdbcType="VARCHAR" />
+    <result column="TFP_PARENT_ID" property="tfpParentId" jdbcType="DECIMAL" />
+  </resultMap>
+  <insert id="insert" parameterType="me.test.dist.sql.model.ESTypeFuncPort" >
+    insert into NETFLOW.ES_TYPEFUNC_PORT (TFP_ID, TFP_NAME, TFP_FUNC, 
+      TFP_TYPE, TFP_PARENT_TYPE, TFP_PARENT_ID
+      )
+    values (#{tfpId,jdbcType=DECIMAL}, #{tfpName,jdbcType=VARCHAR}, #{tfpFunc,jdbcType=VARCHAR}, 
+      #{tfpType,jdbcType=VARCHAR}, #{tfpParentType,jdbcType=VARCHAR}, #{tfpParentId,jdbcType=DECIMAL}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="me.test.dist.sql.model.ESTypeFuncPort" >
+    insert into NETFLOW.ES_TYPEFUNC_PORT
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="tfpId != null" >
+        TFP_ID,
+      </if>
+      <if test="tfpName != null" >
+        TFP_NAME,
+      </if>
+      <if test="tfpFunc != null" >
+        TFP_FUNC,
+      </if>
+      <if test="tfpType != null" >
+        TFP_TYPE,
+      </if>
+      <if test="tfpParentType != null" >
+        TFP_PARENT_TYPE,
+      </if>
+      <if test="tfpParentId != null" >
+        TFP_PARENT_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="tfpId != null" >
+        #{tfpId,jdbcType=DECIMAL},
+      </if>
+      <if test="tfpName != null" >
+        #{tfpName,jdbcType=VARCHAR},
+      </if>
+      <if test="tfpFunc != null" >
+        #{tfpFunc,jdbcType=VARCHAR},
+      </if>
+      <if test="tfpType != null" >
+        #{tfpType,jdbcType=VARCHAR},
+      </if>
+      <if test="tfpParentType != null" >
+        #{tfpParentType,jdbcType=VARCHAR},
+      </if>
+      <if test="tfpParentId != null" >
+        #{tfpParentId,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+</mapper>

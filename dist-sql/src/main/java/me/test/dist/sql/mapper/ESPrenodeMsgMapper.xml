@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="me.test.dist.sql.mapper.ESPrenodeMsgMapper" >
+  <resultMap id="BaseResultMap" type="me.test.dist.sql.model.ESPrenodeMsg" >
+    <id column="PM_ID" property="pmId" jdbcType="DECIMAL" />
+    <result column="PM_ROUTE_NUM" property="pmRouteNum" jdbcType="VARCHAR" />
+    <result column="PM_NAME" property="pmName" jdbcType="VARCHAR" />
+    <result column="PM_LOCATION" property="pmLocation" jdbcType="VARCHAR" />
+    <result column="PM_JUMP_FIBER_MSG" property="pmJumpFiberMsg" jdbcType="VARCHAR" />
+    <result column="BASIC_ID" property="basicId" jdbcType="DECIMAL" />
+    <result column="CM_ID" property="cmId" jdbcType="DECIMAL" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    PM_ID, PM_ROUTE_NUM, PM_NAME, PM_LOCATION, PM_JUMP_FIBER_MSG, BASIC_ID, CM_ID
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.math.BigDecimal" >
+    select 
+    <include refid="Base_Column_List" />
+    from NETFLOW.ES_PRENODE_MSG
+    where PM_ID = #{pmId,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.math.BigDecimal" >
+    delete from NETFLOW.ES_PRENODE_MSG
+    where PM_ID = #{pmId,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" parameterType="me.test.dist.sql.model.ESPrenodeMsg" >
+    insert into NETFLOW.ES_PRENODE_MSG (PM_ID, PM_ROUTE_NUM, PM_NAME, 
+      PM_LOCATION, PM_JUMP_FIBER_MSG, BASIC_ID, 
+      CM_ID)
+    values (#{pmId,jdbcType=DECIMAL}, #{pmRouteNum,jdbcType=VARCHAR}, #{pmName,jdbcType=VARCHAR}, 
+      #{pmLocation,jdbcType=VARCHAR}, #{pmJumpFiberMsg,jdbcType=VARCHAR}, #{basicId,jdbcType=DECIMAL}, 
+      #{cmId,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="me.test.dist.sql.model.ESPrenodeMsg" >
+    insert into NETFLOW.ES_PRENODE_MSG
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="pmId != null" >
+        PM_ID,
+      </if>
+      <if test="pmRouteNum != null" >
+        PM_ROUTE_NUM,
+      </if>
+      <if test="pmName != null" >
+        PM_NAME,
+      </if>
+      <if test="pmLocation != null" >
+        PM_LOCATION,
+      </if>
+      <if test="pmJumpFiberMsg != null" >
+        PM_JUMP_FIBER_MSG,
+      </if>
+      <if test="basicId != null" >
+        BASIC_ID,
+      </if>
+      <if test="cmId != null" >
+        CM_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="pmId != null" >
+        #{pmId,jdbcType=DECIMAL},
+      </if>
+      <if test="pmRouteNum != null" >
+        #{pmRouteNum,jdbcType=VARCHAR},
+      </if>
+      <if test="pmName != null" >
+        #{pmName,jdbcType=VARCHAR},
+      </if>
+      <if test="pmLocation != null" >
+        #{pmLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="pmJumpFiberMsg != null" >
+        #{pmJumpFiberMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="basicId != null" >
+        #{basicId,jdbcType=DECIMAL},
+      </if>
+      <if test="cmId != null" >
+        #{cmId,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="me.test.dist.sql.model.ESPrenodeMsg" >
+    update NETFLOW.ES_PRENODE_MSG
+    <set >
+      <if test="pmRouteNum != null" >
+        PM_ROUTE_NUM = #{pmRouteNum,jdbcType=VARCHAR},
+      </if>
+      <if test="pmName != null" >
+        PM_NAME = #{pmName,jdbcType=VARCHAR},
+      </if>
+      <if test="pmLocation != null" >
+        PM_LOCATION = #{pmLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="pmJumpFiberMsg != null" >
+        PM_JUMP_FIBER_MSG = #{pmJumpFiberMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="basicId != null" >
+        BASIC_ID = #{basicId,jdbcType=DECIMAL},
+      </if>
+      <if test="cmId != null" >
+        CM_ID = #{cmId,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where PM_ID = #{pmId,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="me.test.dist.sql.model.ESPrenodeMsg" >
+    update NETFLOW.ES_PRENODE_MSG
+    set PM_ROUTE_NUM = #{pmRouteNum,jdbcType=VARCHAR},
+      PM_NAME = #{pmName,jdbcType=VARCHAR},
+      PM_LOCATION = #{pmLocation,jdbcType=VARCHAR},
+      PM_JUMP_FIBER_MSG = #{pmJumpFiberMsg,jdbcType=VARCHAR},
+      BASIC_ID = #{basicId,jdbcType=DECIMAL},
+      CM_ID = #{cmId,jdbcType=DECIMAL}
+    where PM_ID = #{pmId,jdbcType=DECIMAL}
+  </update>
+</mapper>
