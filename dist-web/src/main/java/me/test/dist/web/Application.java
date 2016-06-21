@@ -7,7 +7,7 @@ import org.springframework.boot.context.web.SpringBootServletInitializer;
 import org.springframework.context.ApplicationContext;
 
 @SpringBootApplication
-public class Application {
+public class Application extends SpringBootServletInitializer{
 
 	public static void main(String[] args) {
 		ApplicationContext context = SpringApplication.run(Application.class, args);
@@ -15,6 +15,12 @@ public class Application {
 			System.out.println(name);
 		}
 	}
+	
+	@Override
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+		return application.sources(Application.class);
+	}
+	
 	
 	public static class ServleInit extends SpringBootServletInitializer{
 		@Override

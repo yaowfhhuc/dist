@@ -1,4 +1,4 @@
-package me.test.dist.sql.app;
+/*package me.test.dist.sql.app;
 
 import javax.sql.DataSource;
 
@@ -7,8 +7,12 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.PropertySources;
 
 @Configuration
+@PropertySources({ @PropertySource(value = "classpath:application.properties", ignoreResourceNotFound = true),
+@PropertySource(value="file:../conf/application.properties",ignoreResourceNotFound=true)})
 public class GlobalDataConfig {
 
 	@Bean(name="zgDataSource")
@@ -25,3 +29,4 @@ public class GlobalDataConfig {
 	}
 	
 }
+*/
