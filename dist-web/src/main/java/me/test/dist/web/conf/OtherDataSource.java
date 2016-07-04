@@ -6,7 +6,7 @@
 * @date 2016年6月21日 上午10:58:55 
 * @version V1.0   
 */
-package me.test.dist.conf.sql;
+package me.test.dist.web.conf;
 
 import javax.sql.DataSource;
 
@@ -31,7 +31,7 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 *  
 */
 @Configuration
-@MapperScan(basePackages="me.test.dist.sql.easysight.mapper",sqlSessionFactoryRef="otherSqlSessionFactory")
+@MapperScan(basePackages="me.test.dist.sql.ziguan.mapper",sqlSessionFactoryRef="otherSqlSessionFactory")
 public class OtherDataSource {
 
 	@Autowired
@@ -40,7 +40,7 @@ public class OtherDataSource {
 	@Bean(name="otherDs")
 	@Qualifier("otherDs")
 	@Primary
-	@ConfigurationProperties(prefix="spring.datasource.ziguan.")
+	@ConfigurationProperties(prefix="spring.datasource.ziguan")
 	public DataSource esDataSource() {
 		DataSourceBuilder creater = DataSourceBuilder.create();
 		creater.driverClassName(env.getProperty("spring.datasource.ziguan.driverClassName"))

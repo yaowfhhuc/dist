@@ -20,5 +20,19 @@
 			<artifactId>dist-util</artifactId>
 			<version>${version}</version>
 		</dependency>
+		<dependency>
+			<groupId>me.test.dist</groupId>
+			<artifactId>dist-sql</artifactId>
+			<version>${version}</version>
+		</dependency>
 	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
 </project>

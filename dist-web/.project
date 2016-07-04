@@ -3,6 +3,7 @@
 	<name>dist-web</name>
 	<comment></comment>
 	<projects>
+		<project>dist-sql</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

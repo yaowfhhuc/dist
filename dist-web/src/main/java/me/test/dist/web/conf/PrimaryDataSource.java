@@ -6,7 +6,7 @@
 * @date 2016年6月21日 上午10:58:55 
 * @version V1.0   
 */
-package me.test.dist.conf.sql;
+package me.test.dist.web.conf;
 
 import javax.sql.DataSource;
 
@@ -40,7 +40,7 @@ public class PrimaryDataSource {
 	@Bean(name="primaryDs")
 	@Qualifier("primaryDs")
 	@Primary
-	@ConfigurationProperties(prefix="spring.datasource.easysight.")
+	@ConfigurationProperties(prefix="spring.datasource.easysight")
 	public DataSource esDataSource() {
 		DataSourceBuilder creater = DataSourceBuilder.create();
 		creater.driverClassName(env.getProperty("spring.datasource.easysight.driverClassName"))

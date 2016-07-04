@@ -1,5 +1,6 @@
 package me.test.dist.web;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -9,6 +10,7 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.annotation.PropertySources;
 
 @SpringBootApplication
+@MapperScan(basePackages="me.test.dist.sql.easysight.mapper")
 @PropertySource(value="file:../conf/application.properties")
 public class Application extends SpringBootServletInitializer{
 
