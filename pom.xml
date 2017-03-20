@@ -24,6 +24,8 @@
 		<module>dist-api</module>
 		<module>dist-web</module>
     <module>dist-task</module>
+    <module>dist-annotation</module>
+    <module>dist-hadoop</module>
   </modules>
 
 	<repositories>
@@ -54,8 +56,8 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<logback.version>1.1.2</logback.version>
 		<mybatis.version>3.2.0</mybatis.version>
- 		<mybatis.spring.boot>1.0.0</mybatis.spring.boot>
- 		<pagehelper.version>4.1.4</pagehelper.version>
+		<mybatis.spring.boot>1.0.0</mybatis.spring.boot>
+		<pagehelper.version>4.1.4</pagehelper.version>
 	</properties>
 
 	<dependencies>
@@ -87,6 +89,10 @@
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aop</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>org.apache.tomcat.embed</groupId>
 			<artifactId>tomcat-embed-jasper</artifactId>
 			<scope>provided</scope>
@@ -104,10 +110,10 @@
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-core</artifactId>
 		</dependency>
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>jcl-over-slf4j</artifactId>
-		</dependency>
+		</dependency> -->
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-classic</artifactId>

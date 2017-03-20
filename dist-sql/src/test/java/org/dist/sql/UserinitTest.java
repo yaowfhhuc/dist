@@ -8,11 +8,9 @@ import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import me.test.dist.sql.app.Application;
-import me.test.dist.sql.repository.UserRepository;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Application.class)
-@DirtiesContext
 public class UserinitTest {
 
 	@Autowired
