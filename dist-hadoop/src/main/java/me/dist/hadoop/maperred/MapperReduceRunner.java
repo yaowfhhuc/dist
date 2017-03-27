@@ -44,9 +44,15 @@ public class MapperReduceRunner {
 		job.setOutputKeyClass(Text.class);
 		job.setOutputValueClass(LongWritable.class);
 		
+		
+		//加入自定义分区
+		job.setPartitionerClass(PartitionerTest.class);
+		//设置reduce task 的数量 ， 与分片个数匹配
+		//设置数量少与partition的数量时 会抛出异常（为1时无异常）
+		job.setNumReduceTasks(3);
+		
 		//输入数据存放路径
 		FileInputFormat.setInputPaths(job, "/input");
-		
 		//输出数据存放路径
 		FileOutputFormat.setOutputPath(job, new Path("/output"));
 		

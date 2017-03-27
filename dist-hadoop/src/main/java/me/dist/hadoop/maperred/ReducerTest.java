@@ -20,4 +20,5 @@ public class ReducerTest extends Reducer<Text, LongWritable, Text, LongWritable>
 		
 		context.write(key, new LongWritable(count));
 	}
+	
 }
