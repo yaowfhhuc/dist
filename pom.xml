@@ -26,6 +26,7 @@
     <module>dist-task</module>
     <module>dist-annotation</module>
     <module>dist-hadoop</module>
+    <module>dist-openmq</module>
   </modules>
 
 	<repositories>

@@ -1,0 +1,702 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://model.easysight.sql.dist.test.me" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://model.easysight.sql.dist.test.me" xmlns:intf="http://model.easysight.sql.dist.test.me" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://model.easysight.sql.dist.test.me" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getCmId">
+    <complexType/>
+   </element>
+   <element name="getCmIdResponse">
+    <complexType>
+     <sequence>
+      <element name="getCmIdReturn" type="xsd:decimal"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setCmId">
+    <complexType>
+     <sequence>
+      <element name="cmId" type="xsd:decimal"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setCmIdResponse">
+    <complexType/>
+   </element>
+   <element name="getBasicId">
+    <complexType/>
+   </element>
+   <element name="getBasicIdResponse">
+    <complexType>
+     <sequence>
+      <element name="getBasicIdReturn" type="xsd:decimal"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setBasicId">
+    <complexType>
+     <sequence>
+      <element name="basicId" type="xsd:decimal"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setBasicIdResponse">
+    <complexType/>
+   </element>
+   <element name="getCmStatus">
+    <complexType/>
+   </element>
+   <element name="getCmStatusResponse">
+    <complexType>
+     <sequence>
+      <element name="getCmStatusReturn" type="xsd:decimal"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setCmStatus">
+    <complexType>
+     <sequence>
+      <element name="cmStatus" type="xsd:decimal"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setCmStatusResponse">
+    <complexType/>
+   </element>
+   <element name="getCmPerson">
+    <complexType/>
+   </element>
+   <element name="getCmPersonResponse">
+    <complexType>
+     <sequence>
+      <element name="getCmPersonReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setCmPerson">
+    <complexType>
+     <sequence>
+      <element name="cmPerson" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setCmPersonResponse">
+    <complexType/>
+   </element>
+   <element name="getCmSubmitTime">
+    <complexType/>
+   </element>
+   <element name="getCmSubmitTimeResponse">
+    <complexType>
+     <sequence>
+      <element name="getCmSubmitTimeReturn" type="xsd:dateTime"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setCmSubmitTime">
+    <complexType>
+     <sequence>
+      <element name="cmSubmitTime" type="xsd:dateTime"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setCmSubmitTimeResponse">
+    <complexType/>
+   </element>
+   <element name="getCmPassTime">
+    <complexType/>
+   </element>
+   <element name="getCmPassTimeResponse">
+    <complexType>
+     <sequence>
+      <element name="getCmPassTimeReturn" type="xsd:dateTime"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setCmPassTime">
+    <complexType>
+     <sequence>
+      <element name="cmPassTime" type="xsd:dateTime"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setCmPassTimeResponse">
+    <complexType/>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="setCmPassTimeRequest">
+
+      <wsdl:part element="impl:setCmPassTime" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setCmPassTimeResponse">
+
+      <wsdl:part element="impl:setCmPassTimeResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getCmPersonResponse">
+
+      <wsdl:part element="impl:getCmPersonResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getCmPassTimeRequest">
+
+      <wsdl:part element="impl:getCmPassTime" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getCmPassTimeResponse">
+
+      <wsdl:part element="impl:getCmPassTimeResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setBasicIdResponse">
+
+      <wsdl:part element="impl:setBasicIdResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getCmPersonRequest">
+
+      <wsdl:part element="impl:getCmPerson" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getBasicIdResponse">
+
+      <wsdl:part element="impl:getBasicIdResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getCmSubmitTimeResponse">
+
+      <wsdl:part element="impl:getCmSubmitTimeResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setCmSubmitTimeResponse">
+
+      <wsdl:part element="impl:setCmSubmitTimeResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setCmIdResponse">
+
+      <wsdl:part element="impl:setCmIdResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setCmStatusRequest">
+
+      <wsdl:part element="impl:setCmStatus" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getCmSubmitTimeRequest">
+
+      <wsdl:part element="impl:getCmSubmitTime" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setCmPersonResponse">
+
+      <wsdl:part element="impl:setCmPersonResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getCmStatusResponse">
+
+      <wsdl:part element="impl:getCmStatusResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setCmSubmitTimeRequest">
+
+      <wsdl:part element="impl:setCmSubmitTime" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setBasicIdRequest">
+
+      <wsdl:part element="impl:setBasicId" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getCmStatusRequest">
+
+      <wsdl:part element="impl:getCmStatus" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setCmIdRequest">
+
+      <wsdl:part element="impl:setCmId" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getBasicIdRequest">
+
+      <wsdl:part element="impl:getBasicId" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setCmPersonRequest">
+
+      <wsdl:part element="impl:setCmPerson" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getCmIdRequest">
+
+      <wsdl:part element="impl:getCmId" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getCmIdResponse">
+
+      <wsdl:part element="impl:getCmIdResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setCmStatusResponse">
+
+      <wsdl:part element="impl:setCmStatusResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="ESCheckMsg">
+
+      <wsdl:operation name="getCmId">
+
+         <wsdl:input message="impl:getCmIdRequest" name="getCmIdRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getCmIdResponse" name="getCmIdResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setCmId">
+
+         <wsdl:input message="impl:setCmIdRequest" name="setCmIdRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setCmIdResponse" name="setCmIdResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getBasicId">
+
+         <wsdl:input message="impl:getBasicIdRequest" name="getBasicIdRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getBasicIdResponse" name="getBasicIdResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setBasicId">
+
+         <wsdl:input message="impl:setBasicIdRequest" name="setBasicIdRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setBasicIdResponse" name="setBasicIdResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getCmStatus">
+
+         <wsdl:input message="impl:getCmStatusRequest" name="getCmStatusRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getCmStatusResponse" name="getCmStatusResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setCmStatus">
+
+         <wsdl:input message="impl:setCmStatusRequest" name="setCmStatusRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setCmStatusResponse" name="setCmStatusResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getCmPerson">
+
+         <wsdl:input message="impl:getCmPersonRequest" name="getCmPersonRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getCmPersonResponse" name="getCmPersonResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setCmPerson">
+
+         <wsdl:input message="impl:setCmPersonRequest" name="setCmPersonRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setCmPersonResponse" name="setCmPersonResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getCmSubmitTime">
+
+         <wsdl:input message="impl:getCmSubmitTimeRequest" name="getCmSubmitTimeRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getCmSubmitTimeResponse" name="getCmSubmitTimeResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setCmSubmitTime">
+
+         <wsdl:input message="impl:setCmSubmitTimeRequest" name="setCmSubmitTimeRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setCmSubmitTimeResponse" name="setCmSubmitTimeResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getCmPassTime">
+
+         <wsdl:input message="impl:getCmPassTimeRequest" name="getCmPassTimeRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getCmPassTimeResponse" name="getCmPassTimeResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setCmPassTime">
+
+         <wsdl:input message="impl:setCmPassTimeRequest" name="setCmPassTimeRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setCmPassTimeResponse" name="setCmPassTimeResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="ESCheckMsgSoapBinding" type="impl:ESCheckMsg">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getCmId">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getCmIdRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getCmIdResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setCmId">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setCmIdRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setCmIdResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getBasicId">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getBasicIdRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getBasicIdResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setBasicId">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setBasicIdRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setBasicIdResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getCmStatus">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getCmStatusRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getCmStatusResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setCmStatus">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setCmStatusRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setCmStatusResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getCmPerson">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getCmPersonRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getCmPersonResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setCmPerson">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setCmPersonRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setCmPersonResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getCmSubmitTime">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getCmSubmitTimeRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getCmSubmitTimeResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setCmSubmitTime">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setCmSubmitTimeRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setCmSubmitTimeResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getCmPassTime">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getCmPassTimeRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getCmPassTimeResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setCmPassTime">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setCmPassTimeRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setCmPassTimeResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="ESCheckMsgService">
+
+      <wsdl:port binding="impl:ESCheckMsgSoapBinding" name="ESCheckMsg">
+
+         <wsdlsoap:address location="http://localhost/dist-web/services/ESCheckMsg"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

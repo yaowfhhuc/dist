@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from ESCheckMsgService WSDL service -->
+
+  <service name="ESCheckMsg" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://model.easysight.sql.dist.test.me"/>
+      <parameter name="wsdlServiceElement" value="ESCheckMsgService"/>
+      <parameter name="schemaQualified" value="http://model.easysight.sql.dist.test.me"/>
+      <parameter name="wsdlServicePort" value="ESCheckMsg"/>
+      <parameter name="className" value="me.test.dist.sql.easysight.model.ESCheckMsg"/>
+      <parameter name="wsdlPortType" value="ESCheckMsg"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://model.easysight.sql.dist.test.me" xmlns:retNS="http://model.easysight.sql.dist.test.me" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getCmId" qname="operNS:getCmId" returnQName="retNS:getCmIdReturn" returnType="rtns:decimal" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://model.easysight.sql.dist.test.me" name="setCmId" qname="operNS:setCmId" soapAction="">
+        <parameter xmlns:pns="http://model.easysight.sql.dist.test.me" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:cmId" type="tns:decimal"/>
+      </operation>
+      <operation xmlns:operNS="http://model.easysight.sql.dist.test.me" xmlns:retNS="http://model.easysight.sql.dist.test.me" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getBasicId" qname="operNS:getBasicId" returnQName="retNS:getBasicIdReturn" returnType="rtns:decimal" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://model.easysight.sql.dist.test.me" name="setBasicId" qname="operNS:setBasicId" soapAction="">
+        <parameter xmlns:pns="http://model.easysight.sql.dist.test.me" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:basicId" type="tns:decimal"/>
+      </operation>
+      <operation xmlns:operNS="http://model.easysight.sql.dist.test.me" xmlns:retNS="http://model.easysight.sql.dist.test.me" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getCmStatus" qname="operNS:getCmStatus" returnQName="retNS:getCmStatusReturn" returnType="rtns:decimal" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://model.easysight.sql.dist.test.me" name="setCmStatus" qname="operNS:setCmStatus" soapAction="">
+        <parameter xmlns:pns="http://model.easysight.sql.dist.test.me" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:cmStatus" type="tns:decimal"/>
+      </operation>
+      <operation xmlns:operNS="http://model.easysight.sql.dist.test.me" xmlns:retNS="http://model.easysight.sql.dist.test.me" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getCmPerson" qname="operNS:getCmPerson" returnQName="retNS:getCmPersonReturn" returnType="rtns:string" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://model.easysight.sql.dist.test.me" name="setCmPerson" qname="operNS:setCmPerson" soapAction="">
+        <parameter xmlns:pns="http://model.easysight.sql.dist.test.me" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:cmPerson" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://model.easysight.sql.dist.test.me" xmlns:retNS="http://model.easysight.sql.dist.test.me" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getCmSubmitTime" qname="operNS:getCmSubmitTime" returnQName="retNS:getCmSubmitTimeReturn" returnType="rtns:dateTime" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://model.easysight.sql.dist.test.me" name="setCmSubmitTime" qname="operNS:setCmSubmitTime" soapAction="">
+        <parameter xmlns:pns="http://model.easysight.sql.dist.test.me" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:cmSubmitTime" type="tns:dateTime"/>
+      </operation>
+      <operation xmlns:operNS="http://model.easysight.sql.dist.test.me" xmlns:retNS="http://model.easysight.sql.dist.test.me" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getCmPassTime" qname="operNS:getCmPassTime" returnQName="retNS:getCmPassTimeReturn" returnType="rtns:dateTime" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://model.easysight.sql.dist.test.me" name="setCmPassTime" qname="operNS:setCmPassTime" soapAction="">
+        <parameter xmlns:pns="http://model.easysight.sql.dist.test.me" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:cmPassTime" type="tns:dateTime"/>
+      </operation>
+      <parameter name="allowedMethods" value="getCmPassTime getCmId setCmPerson setCmSubmitTime getBasicId getCmSubmitTime setCmPassTime setBasicId getCmStatus getCmPerson setCmStatus setCmId"/>
+
+  </service>
+</deployment>

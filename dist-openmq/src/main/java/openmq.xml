@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xsi:schemaLocation="
+     http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+     http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+     http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
+    
+    <bean id="connectionfactory" factory-bean="connectionfactoryfactory"
+		factory-method="createConnectionFactory" />
+		
+	<bean id="openmqConnectionFactory"
+		class="org.springframework.jms.connection.CachingConnectionFactory">
+		<property name="targetConnectionFactory">
+			<ref bean="connectionfactory" />
+		</property>
+	</bean>
+
+	<bean id="connectionfactoryfactory" class="fm5.util.jms.SunMQConnectionFactoryFactory">
+		<property name="properties">
+			<props>
+				<prop key="imqAddressList">10.221.233.45:7676</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="openmqJmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+		<property name="connectionFactory" ref="openmqConnectionFactory" />
+		<property name="defaultDestination">
+			<bean class="com.sun.messaging.Queue">
+				<constructor-arg value="ALARM_DX_SJW.Q" />
+			</bean>
+		</property>
+	</bean>
+</beans>
