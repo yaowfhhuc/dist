@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:lang="http://www.springframework.org/schema/lang"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
+	http://www.springframework.org/schema/lang 
+	http://www.springframework.org/schema/lang/spring-lang-3.0.xsd 
+	http://www.springframework.org/schema/util 
+	http://www.springframework.org/schema/util/spring-util-3.0.xsd"
+	default-init-method="init" default-destroy-method="destroy">
+
+
+	<bean id="config"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<value>classpath:application.properties </value>
+		</property>
+	</bean>
+
+	<bean id="systemProperty" class="fm5.util.SystemProperty">
+		<property name="properties">
+			<props>
+				<prop key="java.rmi.server.hostname">${rmi.hostsname}</prop>
+				<prop key="sun.rmi.transport.tcp.readTimeout">
+					${rmi.readTimeOut}
+				</prop>
+			</props>
+		</property>
+	</bean>
+
+	
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="driverClass" value="${jdbc.driverClassName}" />
+		<property name="jdbcUrl" value="${jdbc.url}" />
+		<property name="user" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+		<property name="testConnectionOnCheckout" value="true" />
+		<property name="acquireRetryAttempts" value="7200" />
+		<property name="acquireRetryDelay" value="5000" />
+	</bean>
+	<bean id="sftpSource" class="fm5.datatask.idc.SftpSource">
+		<property name="url" value="${sftp.url}"/>
+		<property name="port" value="${sftp.port}"/>
+		<property name="username" value="${sftp.username}"/>
+		<property name="password" value="${sftp.password}"/>
+		<property name="remotePath" value="${sftp.remotePath}"/>
+		<property name="localPath" value="${sftp.localPath}"/>
+		<property name="seperatekey" value="${sftp.serperator}"/>
+	</bean>
+
+</beans>
+

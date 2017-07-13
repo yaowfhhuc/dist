@@ -19,5 +19,10 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-jdbc</artifactId>
 		</dependency>
+		    <dependency>  
+        <groupId>com.mchange</groupId>  
+        <artifactId>c3p0</artifactId>  
+        <version>0.9.5-pre8</version>  
+    </dependency>  
 	</dependencies>
 </project>

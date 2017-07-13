@@ -44,6 +44,8 @@ public class MapperReduceRunner {
 		job.setOutputKeyClass(Text.class);
 		job.setOutputValueClass(LongWritable.class);
 		
+		//排序
+		job.setSortComparatorClass(SortComparatorTest.class);
 		
 		//加入自定义分区
 		job.setPartitionerClass(PartitionerTest.class);
