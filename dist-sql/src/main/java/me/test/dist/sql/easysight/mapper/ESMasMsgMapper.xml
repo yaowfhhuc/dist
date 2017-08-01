@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="me.test.dist.sql.mapper.ESMasMsgMapper" >
-  <resultMap id="BaseResultMap" type="me.test.dist.sql.model.ESMasMsg" >
+<mapper namespace="me.test.dist.sql.easysight.mapper.ESMasMsgMapper" >
+  <resultMap id="BaseResultMap" type="me.test.dist.sql.easysight.model.ESMasMsg" >
     <id column="MM_ID" property="mmId" jdbcType="DECIMAL" />
     <result column="MM_ENTERPRISE_CODE" property="mmEnterpriseCode" jdbcType="DECIMAL" />
     <result column="MM_SERVICE_CODE" property="mmServiceCode" jdbcType="DECIMAL" />
@@ -31,7 +31,7 @@
     delete from NETFLOW.ES_MAS_MSG
     where MM_ID = #{mmId,jdbcType=DECIMAL}
   </delete>
-  <insert id="insert" parameterType="me.test.dist.sql.model.ESMasMsg" >
+  <insert id="insert" parameterType="me.test.dist.sql.easysight.model.ESMasMsg" >
     insert into NETFLOW.ES_MAS_MSG (MM_ID, MM_ENTERPRISE_CODE, MM_SERVICE_CODE, 
       MM_MANUFACTURER, MM_VERSIONS, MM_INSTALL_TYPE, 
       MM_INSTALL_ADDRESS, MM_IP, MM_TWICE_DEVELOP, 
@@ -43,7 +43,7 @@
       #{mmMaintainPerson,jdbcType=VARCHAR}, #{mmMaintainPhone,jdbcType=DECIMAL}, #{basicId,jdbcType=DECIMAL}, 
       #{cmId,jdbcType=DECIMAL})
   </insert>
-  <insert id="insertSelective" parameterType="me.test.dist.sql.model.ESMasMsg" >
+  <insert id="insertSelective" parameterType="me.test.dist.sql.easysight.model.ESMasMsg" >
     insert into NETFLOW.ES_MAS_MSG
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="mmId != null" >
@@ -128,7 +128,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="me.test.dist.sql.model.ESMasMsg" >
+  <update id="updateByPrimaryKeySelective" parameterType="me.test.dist.sql.easysight.model.ESMasMsg" >
     update NETFLOW.ES_MAS_MSG
     <set >
       <if test="mmEnterpriseCode != null" >
@@ -170,7 +170,7 @@
     </set>
     where MM_ID = #{mmId,jdbcType=DECIMAL}
   </update>
-  <update id="updateByPrimaryKey" parameterType="me.test.dist.sql.model.ESMasMsg" >
+  <update id="updateByPrimaryKey" parameterType="me.test.dist.sql.easysight.model.ESMasMsg" >
     update NETFLOW.ES_MAS_MSG
     set MM_ENTERPRISE_CODE = #{mmEnterpriseCode,jdbcType=DECIMAL},
       MM_SERVICE_CODE = #{mmServiceCode,jdbcType=DECIMAL},

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="me.test.dist.sql.mapper.ESGprsMsgMapper" >
-  <resultMap id="BaseResultMap" type="me.test.dist.sql.model.ESGprsMsg" >
+<mapper namespace="me.test.dist.sql.easysight.mapper.ESGprsMsgMapper" >
+  <resultMap id="BaseResultMap" type="me.test.dist.sql.easysight.model.ESGprsMsg" >
     <id column="GS_ID" property="gsId" jdbcType="DECIMAL" />
     <result column="GS_APN_ID" property="gsApnId" jdbcType="DECIMAL" />
     <result column="GS_SERVOR_IP" property="gsServorIp" jdbcType="VARCHAR" />
@@ -34,7 +34,7 @@
     delete from NETFLOW.ES_GPRS_SPMSG
     where GS_ID = #{gsId,jdbcType=DECIMAL}
   </delete>
-  <insert id="insert" parameterType="me.test.dist.sql.model.ESGprsMsg" >
+  <insert id="insert" parameterType="me.test.dist.sql.easysight.model.ESGprsMsg" >
     insert into NETFLOW.ES_GPRS_SPMSG (GS_ID, GS_APN_ID, GS_SERVOR_IP, 
       GS_INTERNET_IP, GS_USER_IP1, GS_USER_IP2, 
       BASIC_ID, "GS_ GGSN_ADDRESS1", "GS_ GGSN_ADDRESS2", 
@@ -48,7 +48,7 @@
       #{gsUserName,jdbcType=VARCHAR}, #{gsPassword,jdbcType=VARCHAR}, #{gsGreKeySuffix,jdbcType=VARCHAR}, 
       #{cmId,jdbcType=DECIMAL})
   </insert>
-  <insert id="insertSelective" parameterType="me.test.dist.sql.model.ESGprsMsg" >
+  <insert id="insertSelective" parameterType="me.test.dist.sql.easysight.model.ESGprsMsg" >
     insert into NETFLOW.ES_GPRS_SPMSG
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="gsId != null" >
@@ -151,7 +151,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="me.test.dist.sql.model.ESGprsMsg" >
+  <update id="updateByPrimaryKeySelective" parameterType="me.test.dist.sql.easysight.model.ESGprsMsg" >
     update NETFLOW.ES_GPRS_SPMSG
     <set >
       <if test="gsApnId != null" >
@@ -202,7 +202,7 @@
     </set>
     where GS_ID = #{gsId,jdbcType=DECIMAL}
   </update>
-  <update id="updateByPrimaryKey" parameterType="me.test.dist.sql.model.ESGprsMsg" >
+  <update id="updateByPrimaryKey" parameterType="me.test.dist.sql.easysight.model.ESGprsMsg" >
     update NETFLOW.ES_GPRS_SPMSG
     set GS_APN_ID = #{gsApnId,jdbcType=DECIMAL},
       GS_SERVOR_IP = #{gsServorIp,jdbcType=VARCHAR},

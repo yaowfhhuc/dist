@@ -29,41 +29,41 @@ public class JSch {
 		config.put("compression_level", "6");
 
 		config.put("diffie-hellman-group-exchange-sha1",
-				"com.eastcom.ipnet.orders.protocol.ssh2.DHGEX");
+				"me.test.util.unix.prococol.ssh2.DHGEX");
 		config.put("diffie-hellman-group1-sha1",
-				"com.eastcom.ipnet.orders.protocol.ssh2.DHG1");
+				"me.test.util.unix.prococol.ssh2.DHG1");
 
-		config.put("dh", "com.eastcom.ipnet.orders.protocol.ssh2.jce.DH");
-		config.put("3des-cbc", "com.eastcom.ipnet.orders.protocol.ssh2.jce.TripleDESCBC");
+		config.put("dh", "me.test.util.unix.prococol.ssh2.jce.DH");
+		config.put("3des-cbc", "me.test.util.unix.prococol.ssh2.jce.TripleDESCBC");
 		config.put("blowfish-cbc",
-				"com.eastcom.ipnet.orders.protocol.ssh2.jce.BlowfishCBC");
-		config.put("hmac-sha1", "com.eastcom.ipnet.orders.protocol.ssh2.jce.HMACSHA1");
+				"me.test.util.unix.prococol.ssh2.jce.jce.BlowfishCBC");
+		config.put("hmac-sha1", "me.test.util.unix.prococol.ssh2.jce.HMACSHA1");
 		config.put("hmac-sha1-96",
-				"com.eastcom.ipnet.orders.protocol.ssh2.jce.HMACSHA196");
-		config.put("hmac-md5", "com.eastcom.ipnet.orders.protocol.ssh2.jce.HMACMD5");
-		config.put("hmac-md5-96", "com.eastcom.ipnet.orders.protocol.ssh2.jce.HMACMD596");
-		config.put("sha-1", "com.eastcom.ipnet.orders.protocol.ssh2.jce.SHA1");
-		config.put("md5", "com.eastcom.ipnet.orders.protocol.ssh2.jce.MD5");
+				"me.test.util.unix.prococol.ssh2.jce.jce.HMACSHA196");
+		config.put("hmac-md5", "me.test.util.unix.prococol.ssh2.jce.HMACMD5");
+		config.put("hmac-md5-96", "me.test.util.unix.prococol.ssh2.jce.HMACMD596");
+		config.put("sha-1", "me.test.util.unix.prococol.ssh2.jce.SHA1");
+		config.put("md5", "me.test.util.unix.prococol.ssh2.jce.MD5");
 		config.put("signature.dss",
-				"com.eastcom.ipnet.orders.protocol.ssh2.jce.SignatureDSA");
+				"me.test.util.unix.prococol.ssh2.jce.SignatureDSA");
 		config.put("signature.rsa",
-				"com.eastcom.ipnet.orders.protocol.ssh2.jce.SignatureRSA");
+				"me.test.util.unix.prococol.ssh2.jce.SignatureRSA");
 		config.put("keypairgen.dsa",
-				"com.eastcom.ipnet.orders.protocol.ssh2.jce.KeyPairGenDSA");
+				"me.test.util.unix.prococol.ssh2.jce.KeyPairGenDSA");
 		config.put("keypairgen.rsa",
-				"com.eastcom.ipnet.orders.protocol.ssh2.jce.KeyPairGenRSA");
+				"me.test.util.unix.prococol.ssh2.jce.KeyPairGenRSA");
 		config.put("random", "me.test.util.unix.util.Random");
 
-		config.put("none", "com.eastcom.ipnet.orders.protocol.ssh2.CipherNone");
+		config.put("none", "me.test.util.unix.prococol.ssh2.CipherNone");
 
-		config.put("aes128-cbc", "com.eastcom.ipnet.orders.protocol.ssh2.jce.AES128CBC");
-		config.put("aes192-cbc", "com.eastcom.ipnet.orders.protocol.ssh2.jce.AES192CBC");
-		config.put("aes256-cbc", "com.eastcom.ipnet.orders.protocol.ssh2.jce.AES256CBC");
-		config.put("aes128-ctr", "com.eastcom.ipnet.orders.protocol.ssh2.jce.AES128CTR");
+		config.put("aes128-cbc", "me.test.util.unix.prococol.ssh2.jce.AES128CBC");
+		config.put("aes192-cbc", "me.test.util.unix.prococol.ssh2.jce.AES192CBC");
+		config.put("aes256-cbc", "me.test.util.unix.prococol.ssh2.jce.AES256CBC");
+		config.put("aes128-ctr", "me.test.util.unix.prococol.ssh2.jce.AES128CTR");
 		config.put("cipher.s2c", "aes128-cbc,aes128-ctr,3des-cbc,blowfish-cbc");
 		config.put("cipher.c2s", "aes128-cbc,aes128-ctr,3des-cbc,blowfish-cbc");
 
-		config.put("zlib", "com.eastcom.ipnet.orders.protocol.ssh2.Compression");
+		config.put("zlib", "me.test.util.unix.prococol.ssh2.Compression");
 
 		config.put("StrictHostKeyChecking", "ask");
 	}

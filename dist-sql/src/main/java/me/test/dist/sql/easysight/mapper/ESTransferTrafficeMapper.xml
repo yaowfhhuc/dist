@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="me.test.dist.sql.mapper.ESTransferTrafficeMapper" >
-  <resultMap id="BaseResultMap" type="me.test.dist.sql.model.ESTransferTraffice" >
+<mapper namespace="me.test.dist.sql.easysight.mapper.ESTransferTrafficeMapper" >
+  <resultMap id="BaseResultMap" type="me.test.dist.sql.easysight.model.ESTransferTraffice" >
     <id column="TT_ID" property="ttId" jdbcType="DECIMAL" />
     <result column="DEVICE_TYPE" property="deviceType" jdbcType="VARCHAR" />
     <result column="MODEL" property="model" jdbcType="VARCHAR" />
@@ -26,7 +26,7 @@
     delete from NETFLOW.ES_TRANSFER_TRAFFICE
     where TT_ID = #{ttId,jdbcType=DECIMAL}
   </delete>
-  <insert id="insert" parameterType="me.test.dist.sql.model.ESTransferTraffice" >
+  <insert id="insert" parameterType="me.test.dist.sql.easysight.model.ESTransferTraffice" >
     insert into NETFLOW.ES_TRANSFER_TRAFFICE (TT_ID, DEVICE_TYPE, MODEL, 
       EQUIPMENT_CABINET, BOARDS_SLOT_POSITION, BOARDS_TYPE, 
       BOARDS_FUNCTION, BASIC_ID, CM_ID
@@ -36,7 +36,7 @@
       #{boardsFunction,jdbcType=VARCHAR}, #{basicId,jdbcType=DECIMAL}, #{cmId,jdbcType=DECIMAL}
       )
   </insert>
-  <insert id="insertSelective" parameterType="me.test.dist.sql.model.ESTransferTraffice" >
+  <insert id="insertSelective" parameterType="me.test.dist.sql.easysight.model.ESTransferTraffice" >
     insert into NETFLOW.ES_TRANSFER_TRAFFICE
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="ttId != null" >
@@ -97,7 +97,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="me.test.dist.sql.model.ESTransferTraffice" >
+  <update id="updateByPrimaryKeySelective" parameterType="me.test.dist.sql.easysight.model.ESTransferTraffice" >
     update NETFLOW.ES_TRANSFER_TRAFFICE
     <set >
       <if test="deviceType != null" >
@@ -127,7 +127,7 @@
     </set>
     where TT_ID = #{ttId,jdbcType=DECIMAL}
   </update>
-  <update id="updateByPrimaryKey" parameterType="me.test.dist.sql.model.ESTransferTraffice" >
+  <update id="updateByPrimaryKey" parameterType="me.test.dist.sql.easysight.model.ESTransferTraffice" >
     update NETFLOW.ES_TRANSFER_TRAFFICE
     set DEVICE_TYPE = #{deviceType,jdbcType=VARCHAR},
       MODEL = #{model,jdbcType=VARCHAR},

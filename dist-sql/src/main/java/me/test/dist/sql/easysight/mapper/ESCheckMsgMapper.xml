@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="me.test.dist.sql.mapper.ESCheckMsgMapper" >
-  <resultMap id="BaseResultMap" type="me.test.dist.sql.model.ESCheckMsg" >
+<mapper namespace="me.test.dist.sql.easysight.mapper.ESCheckMsgMapper" >
+  <resultMap id="BaseResultMap" type="me.test.dist.sql.easysight.model.ESCheckMsg" >
     <id column="CM_ID" property="cmId" jdbcType="DECIMAL" />
     <result column="BASIC_ID" property="basicId" jdbcType="DECIMAL" />
     <result column="CM_STATUS" property="cmStatus" jdbcType="DECIMAL" />
@@ -22,7 +22,7 @@
     delete from NETFLOW.ES_CHECK_MSG
     where CM_ID = #{cmId,jdbcType=DECIMAL}
   </delete>
-  <insert id="insert" parameterType="me.test.dist.sql.model.ESCheckMsg" >
+  <insert id="insert" parameterType="me.test.dist.sql.easysight.model.ESCheckMsg" >
     insert into NETFLOW.ES_CHECK_MSG (CM_ID, BASIC_ID, CM_STATUS, 
       CM_PERSON, CM_SUBMIT_TIME, CM_PASS_TIME
       )
@@ -30,7 +30,7 @@
       #{cmPerson,jdbcType=VARCHAR}, #{cmSubmitTime,jdbcType=TIMESTAMP}, #{cmPassTime,jdbcType=TIMESTAMP}
       )
   </insert>
-  <insert id="insertSelective" parameterType="me.test.dist.sql.model.ESCheckMsg" >
+  <insert id="insertSelective" parameterType="me.test.dist.sql.easysight.model.ESCheckMsg" >
     insert into NETFLOW.ES_CHECK_MSG
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="cmId != null" >
@@ -73,7 +73,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="me.test.dist.sql.model.ESCheckMsg" >
+  <update id="updateByPrimaryKeySelective" parameterType="me.test.dist.sql.easysight.model.ESCheckMsg" >
     update NETFLOW.ES_CHECK_MSG
     <set >
       <if test="basicId != null" >
@@ -94,7 +94,7 @@
     </set>
     where CM_ID = #{cmId,jdbcType=DECIMAL}
   </update>
-  <update id="updateByPrimaryKey" parameterType="me.test.dist.sql.model.ESCheckMsg" >
+  <update id="updateByPrimaryKey" parameterType="me.test.dist.sql.easysight.model.ESCheckMsg" >
     update NETFLOW.ES_CHECK_MSG
     set BASIC_ID = #{basicId,jdbcType=DECIMAL},
       CM_STATUS = #{cmStatus,jdbcType=DECIMAL},

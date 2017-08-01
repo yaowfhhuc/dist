@@ -39,7 +39,6 @@ public class OtherDataSource {
 	
 	@Bean(name="otherDs")
 	@Qualifier("otherDs")
-	@Primary
 	@ConfigurationProperties(prefix="spring.datasource.ziguan")
 	public DataSource esDataSource() {
 		DataSourceBuilder creater = DataSourceBuilder.create();

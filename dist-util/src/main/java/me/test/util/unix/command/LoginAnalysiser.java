@@ -80,6 +80,7 @@ public class LoginAnalysiser implements Analysiser{
 					
 					if(line.getTelnetType().equals(TELNETTYPE.TELNET.value())){
 						TerminalFactory.createTerminal(3, 2, null);
+						terminal.connect(line.getDeviceIp(), Integer.parseInt(line.getPort()),connectTimeout);
 					}else if(line.getTelnetType().equals(TELNETTYPE.SSH.value())) {
 						terminal = TerminalFactory.createTerminal(1, 2, null);
 						terminal.setLogin(line.getLoginId());
@@ -121,9 +122,9 @@ public class LoginAnalysiser implements Analysiser{
 	public static void main(String[] args) {
 		HashMap<String, Object> paramMap = new HashMap<>();
 		IPlugin terminal = TerminalFactory.createTerminal(2, 2, null);
-		terminal.setLogin("ipnet13693890060");
-		terminal.setPassword("DED7587209D22E2A133D7DC429988C9E");
-		terminal.connect("139.118.89.3",2,2000);
+		terminal.setLogin("telorb");
+		terminal.setPassword("1hblsqT!");
+		terminal.connect("10.92.179.1",22,2000);
 		boolean login_ok = terminal.standardLogin(paramMap);
 		System.out.println(login_ok);
 	}

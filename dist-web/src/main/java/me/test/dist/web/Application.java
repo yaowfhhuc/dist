@@ -11,7 +11,10 @@ import org.springframework.context.annotation.PropertySources;
 
 @SpringBootApplication
 @MapperScan(basePackages="me.test.dist.sql.easysight.mapper")
-@PropertySource(value="file:../conf/application.properties")
+@PropertySources({
+	@PropertySource(value="classpath:application.properties"),
+	@PropertySource(value="file:../conf/application.properties",ignoreResourceNotFound=true)
+})
 public class Application extends SpringBootServletInitializer{
 
 	public static void main(String[] args) {

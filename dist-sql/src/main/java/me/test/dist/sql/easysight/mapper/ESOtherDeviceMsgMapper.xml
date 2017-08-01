@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="me.test.dist.sql.mapper.ESOtherDeviceMsgMapper" >
-  <resultMap id="BaseResultMap" type="me.test.dist.sql.model.ESOtherDeviceMsg" >
+<mapper namespace="me.test.dist.sql.easysight.mapper.ESOtherDeviceMsgMapper" >
+  <resultMap id="BaseResultMap" type="me.test.dist.sql.easysight.model.ESOtherDeviceMsg" >
     <id column="OD_ID" property="odId" jdbcType="DECIMAL" />
     <result column="OD_EQUIPMENT_TYPE" property="odEquipmentType" jdbcType="VARCHAR" />
     <result column="OD_UPS_MODEL" property="odUpsModel" jdbcType="VARCHAR" />
@@ -27,7 +27,7 @@
     delete from NETFLOW.ES_OTHER_DEVICE
     where OD_ID = #{odId,jdbcType=DECIMAL}
   </delete>
-  <insert id="insert" parameterType="me.test.dist.sql.model.ESOtherDeviceMsg" >
+  <insert id="insert" parameterType="me.test.dist.sql.easysight.model.ESOtherDeviceMsg" >
     insert into NETFLOW.ES_OTHER_DEVICE (OD_ID, OD_EQUIPMENT_TYPE, OD_UPS_MODEL, 
       OD_UPS_CAPACITY, OD_CONVERSION_TYPE, OD_COROTATING_STATUS, 
       BASIC_ID, OD_UPS_STATUS, OD_COROTATING_MODEL, 
@@ -37,7 +37,7 @@
       #{basicId,jdbcType=DECIMAL}, #{odUpsStatus,jdbcType=VARCHAR}, #{odCorotatingModel,jdbcType=VARCHAR}, 
       #{cmId,jdbcType=DECIMAL})
   </insert>
-  <insert id="insertSelective" parameterType="me.test.dist.sql.model.ESOtherDeviceMsg" >
+  <insert id="insertSelective" parameterType="me.test.dist.sql.easysight.model.ESOtherDeviceMsg" >
     insert into NETFLOW.ES_OTHER_DEVICE
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="odId != null" >
@@ -104,7 +104,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="me.test.dist.sql.model.ESOtherDeviceMsg" >
+  <update id="updateByPrimaryKeySelective" parameterType="me.test.dist.sql.easysight.model.ESOtherDeviceMsg" >
     update NETFLOW.ES_OTHER_DEVICE
     <set >
       <if test="odEquipmentType != null" >
@@ -137,7 +137,7 @@
     </set>
     where OD_ID = #{odId,jdbcType=DECIMAL}
   </update>
-  <update id="updateByPrimaryKey" parameterType="me.test.dist.sql.model.ESOtherDeviceMsg" >
+  <update id="updateByPrimaryKey" parameterType="me.test.dist.sql.easysight.model.ESOtherDeviceMsg" >
     update NETFLOW.ES_OTHER_DEVICE
     set OD_EQUIPMENT_TYPE = #{odEquipmentType,jdbcType=VARCHAR},
       OD_UPS_MODEL = #{odUpsModel,jdbcType=VARCHAR},
