@@ -28,9 +28,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
-import ch.qos.logback.classic.LoggerContext;
-import ch.qos.logback.core.util.StatusPrinter;
-
 /**
  * 这个类是要注入到Spring里面的。作为JMX的代理类。
  * 
@@ -87,7 +84,6 @@ public class ApplicationServer implements ApplicationServerMBean {
 		try {
 			CommandLine line = parser.parse(options, args);
 			if (line.hasOption("start")) {
-				printLoggerContext();
 				startCommand();
 			} else if (line.hasOption("stop")) {
 				stopCommand();
@@ -101,12 +97,6 @@ public class ApplicationServer implements ApplicationServerMBean {
 			e.printStackTrace();
 			System.exit(-1);
 		}
-	}
-
-	public static void printLoggerContext() {
-		LoggerContext lc = (LoggerContext) LoggerFactory.getILoggerFactory();
-		StatusPrinter.setPrintStream(System.err);
-		StatusPrinter.print(lc);
 	}
 
 	public static int getJMXPort() {

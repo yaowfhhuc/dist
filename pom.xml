@@ -28,13 +28,11 @@
 		<module>dist-hadoop</module>
 		<module>dist-openmq</module>
     <module>dist-test</module>
+    <module>dist-netty</module>
+    <module>dist-ffmpeg</module>
   </modules>
 
 	<repositories>
-		<repository>
-			<id>eastcom-public</id>
-			<url>http://117.144.200.210:18080/nexus/content/groups/public/</url>
-		</repository>
 		<repository>
 			<id>spring-snapshots</id>
 			<url>http://repo.spring.io/libs-snapshot</url>
