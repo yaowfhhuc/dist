@@ -19,17 +19,16 @@
 	<modules>
 		<module>dist-sql</module>
 		<module>dist-webservice</module>
-		<module>dist-datatask</module>
-		<module>dist-util</module>
-		<module>dist-api</module>
-		<module>dist-web</module>
 		<module>dist-task</module>
+		<module>dist-util</module>
+		<module>dist-http</module>
+		<module>dist-web</module>
 		<module>dist-annotation</module>
 		<module>dist-hadoop</module>
 		<module>dist-openmq</module>
-    <module>dist-test</module>
-    <module>dist-netty</module>
-    <module>dist-ffmpeg</module>
+    	<module>dist-test</module>
+   	 	<module>dist-netty</module>
+    	<module>dist-ffmpeg</module>
   </modules>
 
 	<repositories>
@@ -70,22 +69,18 @@
 	</properties>
 
 	<dependencies>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<scope>test</scope>
-		</dependency>
 
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 						<exclusions><exclusion>				<groupId>ch.qos.logback</groupId>
 				<artifactId>logback-classic</artifactId></exclusion></exclusions>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-jdbc</artifactId>
-		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-aop</artifactId>
