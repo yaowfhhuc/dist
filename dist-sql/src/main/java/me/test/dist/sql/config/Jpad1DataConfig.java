@@ -1,4 +1,4 @@
-package me.test.dist.sql.app;
+package me.test.dist.sql.config;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +25,7 @@ import java.util.Map;
 @EnableJpaRepositories(
         entityManagerFactoryRef="entityManagerFactoryd1",
         transactionManagerRef="transactionManagerd1",
-        basePackages= { "me.test.dist.sql.jpa.d1" }) //设置Repository所在位置
+        basePackages= { "me.test.dist.sql.jpa.d1.repository" }) //设置Repository所在位置
 public class Jpad1DataConfig {
 
     @Autowired
@@ -47,7 +47,7 @@ public class Jpad1DataConfig {
         return builder
                 .dataSource(primaryDataSource)
                 .properties(getVendorProperties(primaryDataSource))
-                .packages("me.test.dist.sql.jpa.d1") //设置实体类所在位置
+                .packages("me.test.dist.sql.jpa.d1.pojo") //设置实体类所在位置
                 .persistenceUnit("d1PersistenceUnit")
                 .build();
     }

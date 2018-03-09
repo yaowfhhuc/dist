@@ -8,6 +8,7 @@
 */
 package me.test.dist.task.scheduler;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.springframework.scheduling.annotation.Scheduled;
@@ -23,8 +24,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class TestScheduler {
 
+	SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+
 	@Scheduled(cron="0/5 * * * * *")
 	public void testScheduler(){
-		System.out.println(new Date());
+		System.out.println(format.format(new Date()));
 	}
 }

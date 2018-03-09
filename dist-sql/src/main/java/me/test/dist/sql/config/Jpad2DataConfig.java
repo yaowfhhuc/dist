@@ -1,4 +1,4 @@
-package me.test.dist.sql.app;
+package me.test.dist.sql.config;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +8,6 @@ import org.springframework.boot.autoconfigure.orm.jpa.JpaProperties;
 import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
@@ -26,26 +25,24 @@ import java.util.Map;
 @EnableJpaRepositories(
         entityManagerFactoryRef="entityManagerFactoryd2",
         transactionManagerRef="transactionManagerd2",
-        basePackages= { "me.test.dist.sql.jpa.d2" }) //设置Repository所在位置
+        basePackages= { "me.test.dist.sql.jpa.d2.repository" }) //设置Repository所在位置
 public class Jpad2DataConfig {
 
     @Autowired
     @Qualifier("d2DataSource")
     private DataSource primaryDataSource;
 
-    @Primary
     @Bean(name = "entityManagerd2")
     public EntityManager entityManager(EntityManagerFactoryBuilder builder) {
         return entityManagerFactoryPrimary(builder).getObject().createEntityManager();
     }
 
-    @Primary
     @Bean(name = "entityManagerFactoryd2")
     public LocalContainerEntityManagerFactoryBean entityManagerFactoryPrimary (EntityManagerFactoryBuilder builder) {
         return builder
                 .dataSource(primaryDataSource)
                 .properties(getVendorProperties(primaryDataSource))
-                .packages("me.test.dist.sql.jpa.d2") //设置实体类所在位置
+                .packages("me.test.dist.sql.jpa.d2.pojo") //设置实体类所在位置
                 .persistenceUnit("d2PersistenceUnit")
                 .build();
     }
@@ -57,7 +54,6 @@ public class Jpad2DataConfig {
         return jpaProperties.getHibernateProperties(dataSource);
     }
 
-    @Primary
     @Bean(name = "transactionManagerd2")
     public PlatformTransactionManager transactionManagerPrimary(EntityManagerFactoryBuilder builder) {
         return new JpaTransactionManager(entityManagerFactoryPrimary(builder).getObject());
