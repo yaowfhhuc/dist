@@ -1,0 +1,42 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>dist</artifactId>
+        <groupId>me.test.dist</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>dist-cloud</artifactId>
+    <packaging>pom</packaging>
+
+    <name>dist-cloud</name>
+    <url>http://maven.apache.org</url>
+    <modules>
+        <module>dist-cloud-eureka-server</module>
+        <module>dist-cloud-eureka-client</module>
+        <module>dist-cloud-eureka-consumer</module>
+        <module>dist-cloud-eureka-consumer-ribbon</module>
+        <module>dist-cloud-eureka-consumer-feign</module>
+        <module>dist-cloud-config-server-git</module>
+        <module>dist-cloud-config-client</module>
+        <module>dist-cloud-hystrix-dashboard</module>
+        <module>dist-cloud-api-gateway</module>
+    </modules>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Dalston.SR1</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>
