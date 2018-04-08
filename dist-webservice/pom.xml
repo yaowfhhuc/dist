@@ -32,6 +32,9 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<executable>true</executable>   <!--打包成可执行jar包-->
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

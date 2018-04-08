@@ -57,7 +57,7 @@ public class UserInfoTest {
 
 	@Test
 	public void cacheTest(){
-		Assert.assertEquals("1111",userInfoRepository.findUser("1111").getUserName());
-		Assert.assertEquals("1111",userInfoRepository.findUser("1111").getUserName());
+		Assert.assertEquals("1111",userInfoRepository.findByUserName("1111").getUserName());
+		Assert.assertEquals("1111",userInfoRepository.findByUserName("1111").getUserName());
 	}
 }

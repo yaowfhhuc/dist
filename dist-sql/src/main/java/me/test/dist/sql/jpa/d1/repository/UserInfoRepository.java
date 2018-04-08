@@ -19,6 +19,7 @@ public interface UserInfoRepository extends JpaRepository<UserInfo,Integer>{
 
 
     @Cacheable(key = "#p0")
+    @Query("from UserInfo where userName=:name")
     UserInfo findByUserName(String name);
 
     @Cacheable(key="#p0")

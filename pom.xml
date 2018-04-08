@@ -29,7 +29,10 @@
     	<module>dist-test</module>
    	 	<module>dist-netty</module>
     	<module>dist-ffmpeg</module>
-  </modules>
+		<module>dist-foreign</module>
+		<module>dist-cloud</module>
+		<module>dist-mina</module>
+	</modules>
 
 	<repositories>
 		<repository>
@@ -88,10 +91,6 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 		</dependency>
 		<dependency>
@@ -117,14 +116,17 @@
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-classic</artifactId>
+			<version>1.2.3</version>
 		</dependency>
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-core</artifactId>
+			<version>1.2.3</version>
 		</dependency>
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-access</artifactId>
+			<version>1.2.3</version>
 		</dependency>
 
 		<!-- jdbc -->
@@ -168,11 +170,11 @@
 			<artifactId>commons-cli</artifactId>
 			<version>${commons.version}</version>
 		</dependency>
-<!--		<dependency>
+ 		<dependency>
 			<groupId>io.netty</groupId>
 			<artifactId>netty</artifactId>
 			<version>4.0.0.Alpha8</version>
-		</dependency>-->
+		</dependency>
 		<dependency>
 			<groupId>net.sourceforge.jexcelapi</groupId>
 			<artifactId>jxl</artifactId>
