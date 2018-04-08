@@ -7,10 +7,10 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>dist-cloud-eureka-consumer</artifactId>
+    <artifactId>dist-cloud-eureka-consumer-ribbon</artifactId>
     <packaging>jar</packaging>
 
-    <name>dist-cloud-eureka-consumer</name>
+    <name>dist-cloud-eureka-consumer-ribbon</name>
     <url>http://maven.apache.org</url>
 
     <properties>
