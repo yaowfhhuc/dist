@@ -7,10 +7,10 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>dist-cloud-rureka-client</artifactId>
+    <artifactId>dist-cloud-eureka-client</artifactId>
     <packaging>jar</packaging>
 
-    <name>dist-cloud-rureka-client</name>
+    <name>dist-cloud-eureka-client</name>
     <url>http://maven.apache.org</url>
 
     <properties>

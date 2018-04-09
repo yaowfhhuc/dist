@@ -15,7 +15,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import me.test.dist.sql.easysight.mapper.ESCheckMsgMapper;
 
 /** 
 * @ClassName: EasysightController 
@@ -28,12 +27,11 @@ import me.test.dist.sql.easysight.mapper.ESCheckMsgMapper;
 public class EasysightController {
 
 	@Autowired
-	private ESCheckMsgMapper checkMsgMapper;
-	
+
 	@RequestMapping("/test")
 	@ResponseBody
 	public String test(){
-		checkMsgMapper.selectByPrimaryKey(BigDecimal.valueOf(123));
+		//checkMsgMapper.selectByPrimaryKey(BigDecimal.valueOf(123));
 		return "OK";
 	}
 	
