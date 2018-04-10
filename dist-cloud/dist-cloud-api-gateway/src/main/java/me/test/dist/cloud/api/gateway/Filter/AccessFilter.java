@@ -4,12 +4,14 @@ import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
-
+import static org.springframework.cloud.netflix.zuul.filters.support.FilterConstants.PRE_TYPE;
 /**
  * 鉴权认证
  */
+@Component
 public class AccessFilter extends ZuulFilter {
 
     private static Logger log = LoggerFactory.getLogger(AccessFilter.class);
@@ -34,7 +36,7 @@ public class AccessFilter extends ZuulFilter {
      */
     @Override
     public String filterType() {
-        return "pre";
+        return PRE_TYPE;
     }
 
     /**
