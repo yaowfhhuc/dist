@@ -56,6 +56,7 @@ public class AccessFilter extends ZuulFilter {
      */
     @Override
     public Object run() {
+
         RequestContext ctx = RequestContext.getCurrentContext();
         HttpServletRequest request = ctx.getRequest();
 
@@ -71,4 +72,5 @@ public class AccessFilter extends ZuulFilter {
         log.info("access token ok");
         return null;
     }
+
 }

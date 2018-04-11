@@ -10,16 +10,20 @@ import org.springframework.cloud.client.SpringCloudApplication;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.context.annotation.Bean;
 
+
+/**
+ * http://localhost:1101/ribbon/consumer?accessToken=111111
+ */
 @SpringCloudApplication
 @EnableZuulProxy
 public class ApiGatewayApplication {
     public static void main(String[] args) {
-        new SpringApplicationBuilder(ApiGatewayApplication.class).web(true).run(args);
         FilterProcessor.setProcessor(new DistFilterProcessor());
+        new SpringApplicationBuilder(ApiGatewayApplication.class).web(true).run(args);
     }
 
 
-/*    @Bean
+    @Bean
     public AccessFilter accessFilter(){
         return new AccessFilter();
     }
@@ -27,5 +31,5 @@ public class ApiGatewayApplication {
     @Bean
     public ErrorFilter errorFilter(){
         return new ErrorFilter();
-    }*/
+    }
 }
