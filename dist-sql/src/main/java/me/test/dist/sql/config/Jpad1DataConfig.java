@@ -32,8 +32,8 @@ public class Jpad1DataConfig {
     @Qualifier("d1DataSource")
     private DataSource primaryDataSource;
 
-    @Autowired
-    private JpaProperties jpaProperties;
+/*    @Autowired
+    private JpaProperties jpaProperties;*/
 
     @Primary
     @Bean(name = "entityManagerd1")
@@ -46,16 +46,16 @@ public class Jpad1DataConfig {
     public LocalContainerEntityManagerFactoryBean entityManagerFactoryPrimary (EntityManagerFactoryBuilder builder) {
         return builder
                 .dataSource(primaryDataSource)
-                .properties(getVendorProperties(primaryDataSource))
+                //.properties(getVendorProperties(primaryDataSource))
                 .packages("me.test.dist.sql.jpa.d1.pojo") //设置实体类所在位置
                 .persistenceUnit("d1PersistenceUnit")
                 .build();
     }
 
 
-    private Map<String, String> getVendorProperties(DataSource dataSource) {
+ /*   private Map<String, String> getVendorProperties(DataSource dataSource) {
         return jpaProperties.getHibernateProperties(dataSource);
-    }
+    }*/
 
     @Primary
     @Bean(name = "transactionManagerd1")

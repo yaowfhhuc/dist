@@ -41,18 +41,18 @@ public class Jpad2DataConfig {
     public LocalContainerEntityManagerFactoryBean entityManagerFactoryPrimary (EntityManagerFactoryBuilder builder) {
         return builder
                 .dataSource(primaryDataSource)
-                .properties(getVendorProperties(primaryDataSource))
+             //   .properties(getVendorProperties(primaryDataSource))
                 .packages("me.test.dist.sql.jpa.d2.pojo") //设置实体类所在位置
                 .persistenceUnit("d2PersistenceUnit")
                 .build();
     }
 
-    @Autowired
+   /* @Autowired
     private JpaProperties jpaProperties;
 
     private Map<String, String> getVendorProperties(DataSource dataSource) {
         return jpaProperties.getHibernateProperties(dataSource);
-    }
+    }*/
 
     @Bean(name = "transactionManagerd2")
     public PlatformTransactionManager transactionManagerPrimary(EntityManagerFactoryBuilder builder) {
