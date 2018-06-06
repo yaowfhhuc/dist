@@ -18,7 +18,8 @@ public class ConsumerService {
 
     @HystrixCommand(fallbackMethod = "fallback")
     public String consumer(){
-        return restTemplate.getForObject("http://eureka-client/dc", String.class);
+        return loadBalanced.getForObject("http://eureka-client/dc", String.class);
+       // return restTemplate.getForObject("http://localhost:xxx/dc", String.class);
     }
 
     public String fallback(){

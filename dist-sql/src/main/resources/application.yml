@@ -1,0 +1,63 @@
+dev:
+    jdbc:
+        driver:
+        - org.h2.jdbcx.JdbcDataSource
+        password:
+        - ''
+        url:
+        - jdbc:h2:file:~/.h2/myapp;AUTO_SERVER=TRUE;DB_CLOSE_ON_EXIT=FALSE
+        username:
+        - sa
+logging:
+    level:
+        '*': INFO
+    path: ../conf/logs/
+mybatis:
+    createSqlSessionTemplate: true
+    mapper-locations: me.test.dist.sql.mybatis.*
+    type-aliases-package: me.test.dist.sql.mybatis.*
+server:
+    session:
+        timeout: 1800
+spring:
+    aop:
+        proxy-target-class: true
+    datasource:
+        d1:
+            driver-class-name: com.mysql.jdbc.Driver
+            password: root
+            type: com.alibaba.druid.pool.DruidDataSource
+            url: jdbc:mysql://localhost:3306/test1?useSSL=false
+            username: root
+        d2:
+            driver-class-name: com.mysql.jdbc.Driver
+            password: root
+            type: com.alibaba.druid.pool.DruidDataSource
+            url: jdbc:mysql://localhost:3306/test2?useSSL=false
+            username: root
+    jpa:
+        hibernate:
+            ddl-auto: update
+        open-in-view: true
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.MySQL5Dialect
+                enable_lazy_load_on_trans: true
+                hbm2ddl:
+                    auto: update
+                show-sql: true
+        show-sql: true
+    output:
+        ansi:
+            enabled: DETECT
+    redis:
+        database: 0
+        host: localhost
+        password: ''
+        pool:
+            max-active: 8
+            max-idle: 8
+            max-wait: -1
+            min-idle: 0
+        port: 6379
+        timeout: 0
